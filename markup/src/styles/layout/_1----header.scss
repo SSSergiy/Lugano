@@ -1,0 +1,353 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site
+// -----------------------------------------------------------------------------
+[id='header'] {
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+  padding: 25px 20px;
+  z-index: 2;
+}
+
+.header-holder {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo {
+  height: 60px;
+  width: 177.9px;
+  min-width: 100px;
+  margin-right: 20px;
+}
+
+[id='nav'] {
+  @extend %clearfix;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav-drop {
+  @include animate(all);
+  color: $black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 10px 15px;
+  opacity: 0;
+  visibility: hidden;
+
+  @include media('≥tablet') {
+    padding: 0;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-active & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul {
+    @extend %listreset;
+    gap: 40px;
+  }
+
+  > ul {
+    @include media('≥tablet') {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+
+    + li {
+      @include media('≥tablet') {
+        padding-left: 20px;
+      }
+    }
+
+    &.active {
+      a {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover {
+      > a {
+        opacity: 0.5;
+      }
+
+      > ul {
+        display: block;
+      }
+    }
+
+    > ul {
+      background: $gray;
+      display: none;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+
+      @include media('≥tablet') {
+        padding-top: 10px;
+        width: 120px;
+        position: absolute;
+      }
+
+      ul {
+        @include media('≥tablet') {
+          padding-top: 0;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 120px;
+        }
+      }
+
+      li {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.nav-opener {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  line-height: 0;
+  float: right;
+
+  @include media('≥tablet') {
+    display: none;
+  }
+
+  &:before,
+  &:after,
+  span {
+    @include animate(transform opacity);
+    background: $black;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    transform: translateY(-50%);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+  }
+
+  &:before {
+    transform: translateY(-9px);
+  }
+
+  &:after {
+    transform: translateY(6px);
+  }
+
+  &:hover {
+    &:before,
+    &:after,
+    span {
+      background-color: gray;
+    }
+  }
+
+  .nav-active & {
+    span {
+      opacity: 0;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      transform: rotate(45deg) translateY(0);
+    }
+
+    &:after {
+      transform: rotate(-45deg) translateY(0);
+    }
+  }
+}
+
+:root {
+  --size-skew: 15px;
+}
+.btn {
+  max-width: 255px;
+  min-height: 64px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  clip-path: polygon(
+    var(--size-skew) 0,
+    100% 0,
+    100% calc(100% - var(--size-skew)),
+    calc(100% - var(--size-skew)) 100%,
+    0 100%,
+    0 var(--size-skew)
+  );
+  transition: background-color 0.3s ease;
+  transition: color 0.2s ease;
+  box-sizing: border-box;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 119, 1, 1);
+  clip-path: polygon(
+    0 var(--size-skew),
+    var(--size-skew) 0,
+    100% 0,
+    100% calc(100% - var(--size-skew)),
+    calc(100% - var(--size-skew)) 100%,
+    0 100%,
+    0 var(--size-skew),
+    1px calc(var(--size-skew) + 1px),
+    1px calc(100% - 1px),
+    calc(100% - var(--size-skew) - 1px) calc(100% - 1px),
+    calc(100% - 1px) calc(100% - var(--size-skew) - 1px),
+    calc(100% - 1px) 1px,
+    calc(var(--size-skew) + 1px) 1px,
+    1px calc(var(--size-skew) + 1px)
+  );
+  pointer-events: none;
+}
+.btn:hover,
+.btn:active {
+  background-color: rgba(255, 119, 1, 1);
+  color: rgb(255, 255, 255);
+  // -webkit-animation: ripple .5s linear;
+  // animation: ripple .5s linear;
+}
+// .btn:hover {
+//   -webkit-animation: ripple .5s linear;
+//   animation: ripple .5s linear;
+// }
+
+
+// @keyframes ripple {
+//   to {
+//     transform: scale(2);
+//     opacity: 0;
+//   }
+// }
+
+
+
+
+/////////////////////////////////////
+/// 
+
+input {
+  display: none;
+}
+
+#text {
+  position: absolute;
+  display: block;
+  top: 0;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.select {
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+  line-height: 30px;
+  position: relative;
+}
+
+.select:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+  width: 10px;
+  height: 5px;
+  text-align: center;
+  line-height: 26px;
+  // transform: rotate(90deg);
+  cursor: pointer;
+  background-image: url('../images/header/arrow.svg');
+}
+
+.select input[name='list']:not(:checked) ~ #text {
+  color: black;
+  background: white;
+}
+
+.select input[name='list']:checked ~ #text {
+  background: transparent;
+  color: transparent;
+  z-index: 2;
+}
+
+#select:disabled ~ .items #text {
+  background: #eee;
+}
+
+.items {
+  display: block;
+  min-height: 30px;
+  position: absolute;
+  overflow: hidden;
+  width: 70px;
+  cursor: pointer;
+}
+
+#select:not(:checked) ~ .items {
+  height: 30px;
+}
+
+.items label {
+  display: none;
+  padding-left: 10px;
+  background: white;
+}
+
+.items label:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+#select:checked ~ .items label {
+  display: block;
+}
+
+.items input:checked + label {
+  display: block !important;
+  border: none;
+  background: white;
+}

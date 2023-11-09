@@ -1,0 +1,61 @@
+// @import 'base-wp/head-wp';
+
+// devices viewport width starts at:
+$breakpoints: (
+  xs-phone: 320px,
+  phone: 480px,
+  tablet: 768px,
+  desktop: 992px,
+  widescreen: 1200px
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Vendors: include media mixins and mormalize imported from node_modules
+@import 'vendors/normalize';
+@import '~include-media/dist/include-media';
+
+// 3. Base styles and elements
+@import 'base/base';
+@import 'base/helpers';
+@import 'base/fonts';
+@import 'base/typography';
+// @import 'base/forms';
+// @import 'base/web_accessibility';
+
+// base WP
+// @import 'base-wp/cms-reset';
+// @import 'base-wp/wp-reset';
+
+// 4. Layout-related sections
+@import 'layout/common';
+@import 'layout/1----header';
+@import 'layout/2----lugano-business-forum';
+@import 'layout/footer';
+
+// 5. Components
+// @import 'components/button';
+// @import 'components/hero';
+
+// 6. Page-specific styles
+// @import 'pages/home';
+
+// 7. Themes
+// @import 'themes/themes';
+

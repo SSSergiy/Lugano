@@ -1,0 +1,5 @@
+{
+  "ecsstractor_port.indentation": " ",
+  "ecsstractor_port.empty_line_before_nested_selector": true,
+  "ecsstractor_port.bem_nesting": true
+}
