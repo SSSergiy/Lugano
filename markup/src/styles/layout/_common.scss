@@ -1,20 +1,77 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the common layout of the site
 // -----------------------------------------------------------------------------
-[id="wrapper"] {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background:rgba(245, 245, 245, 1);
+[id='wrapper'] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(245, 245, 245, 1);
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .container {
-    width: 100%;
-    max-width: $max-width-center-container;
+  width: 100%;
+  max-width: $max-width-center-container;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @include media('≥phone') {
     padding: $padding-container;
-    margin: 0 auto;
+  }
 }
+// $maxWidth: 1920;
+// $maxWidthContainer: 1248;
+
+// @mixin adaptive-value($property, $startSize, $minSize, $type) {
+//   $addSize: $startSize - $minSize;
+
+//   @if $type == 1 {
+//     // Только если меньше контейнера
+//     #{$property}: #{$startSize}px;
+
+//     @media (max-width: #{$maxWidthContainer}px) {
+//       #{$property}: calc(#{$minSize}px + #{$addSize}px * ((100vw - 370px) / #{$maxWidthContainer - 370}));
+//     }
+//   } @else if $type == 2 {
+//     // Только если больше контейнера
+//     #{$property}: #{$startSize}px;
+
+//     @media (min-width: #{$maxWidthContainer}px) {
+//       #{$property}: calc(#{$minSize}px + #{$addSize}px * ((100vw - 370px) / #{$maxWidth - 370}));
+//     }
+//   } @else {
+//     // Всегда
+//     #{$property}: calc(#{$minSize}px + #{$addSize}px * ((100vw - 370px) / #{$maxWidth - 370}));
+//   }
+// }
+
+// // Пример использования миксина
+// .example {
+//   @include adaptive-value('font-size', 16, 14, 1);
+// }
+
+// $maxWidth: 1920;
+
+// @mixin adaptiv-font($pcSize, $mobSize) {
+//   $addSize: $pcSize - $mobSize;
+//   $addMobSize: $mobSize + ($addSize * 0.7);
+
+//   @media (max-width: 767px) {
+//     font-size: calc(#{$mobSize}px + #{$addMobSize}px * ((100vw - 370px) / #{$maxWidth}));
+//   }
+
+//   @media (min-width: 768px) {
+//     font-size: calc(#{$mobSize}px + #{$addSize}px * (100vw / #{$maxWidth}));
+//   }
+// }
+//приминение
+// h1 {
+//   font-size: 40px;
+//   font-weight: 900;
+//   @include adaptiv-font(40, 24);
+// }

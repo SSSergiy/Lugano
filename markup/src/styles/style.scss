@@ -1,12 +1,13 @@
 // @import 'base-wp/head-wp';
-
+//375 maket mobile size
+//1440 maket desktop size
 // devices viewport width starts at:
 $breakpoints: (
   xs-phone: 320px,
   phone: 480px,
   tablet: 768px,
   desktop: 992px,
-  widescreen: 1200px
+  widescreen: 1250px 
 );
 
 // keywords
@@ -25,10 +26,12 @@ $media-expressions: (
 // 1. Configuration and helpers
 @import 'abstracts/variables';
 @import 'abstracts/functions';
-@import 'abstracts/mixins';
+@import './abstracts/mixins';
 
 // 2. Vendors: include media mixins and mormalize imported from node_modules
 @import 'vendors/normalize';
+@import 'vendors/icomoon';
+
 @import '~include-media/dist/include-media';
 
 // 3. Base styles and elements
@@ -44,10 +47,26 @@ $media-expressions: (
 // @import 'base-wp/wp-reset';
 
 // 4. Layout-related sections
+
 @import 'layout/common';
-@import 'layout/1----header';
-@import 'layout/2----lugano-business-forum';
-@import 'layout/footer';
+@import 'layout/2----header';
+@import 'layout/3----lugano-business-forum';
+@import 'layout/4----about-business-forum';
+@import 'layout/5----was-before';
+@import 'layout/6----discover-power';
+@import 'layout/7----video';
+@import 'layout/8----meet-our-speakers';
+@import 'layout/9----conference-schedule';
+@import 'layout/10----tickes-pre-sale';
+@import 'layout/11----join-our';
+@import 'layout/12----organizers';
+@import 'layout/13-----ticker-tape';
+@import 'layout/14----sponsors.scss';
+@import 'layout/15----see-at-lugano';
+@import 'layout/16----partners';
+@import 'layout/17----media-partners';
+@import 'layout/18----latest-articles';
+@import 'layout/19----footer';
 
 // 5. Components
 // @import 'components/button';

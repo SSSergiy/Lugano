@@ -1,0 +1,52 @@
+.organizers {
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: 1fr 400px 300px;
+  grid-template-rows: 100px 84px 148px;
+  grid-template-areas:
+    'title gg1 gg2'
+    'title ark1 ark2'
+    'gg3 ark3 ark4';
+  align-items: center;
+  justify-items: center;
+
+  &__hgroup {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+  }
+
+  &__hgroup-h {
+    line-height: 120%;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: 'Mulish-Black';
+  }
+
+  &__hgroup-p {
+    font-size: 20px;
+    font-family: 'Montserrat-Regular';
+    /* Додайте будь-які конкретні стилі для p, якщо потрібно */
+  }
+
+  &__article1 {
+    grid-area: ark1;
+  }
+
+  &__article2 {
+    grid-area: ark2;
+  }
+
+  &__article3 {
+    grid-area: ark3;
+  }
+
+  &__article4 {
+    grid-area: ark4;
+  }
+
+
+
+}

@@ -1,0 +1,170 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site
+// -----------------------------------------------------------------------------
+// [id="footer"] {
+//     // background: $base-background-footer;
+// }
+
+.footer {
+    place-items: center;
+    place-content: center;
+    position: relative;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    color: #FFFFFF;
+    background-color: #161616;
+    display: grid;
+    grid-template-columns: 633px 182px 432px; //--------------width
+    grid-template-rows: 325px 95px; //--------------height
+    grid-template-areas:
+        'left         middle   right'
+        'foot      foot      foot';
+
+}
+
+
+.footer-bottom {
+    grid-area: foot;
+    display: flex;
+    align-items: flex-end;
+    align-self: end;
+    justify-content: space-between;
+    width: 100%;
+
+    &__copyright {
+        font-family: 'Montserrat-Medium';
+        font-size: 18px;
+
+    }
+
+    &__copyright-img {}
+
+    &__policy {
+        text-decoration-line: underline;
+        font-size: 18px;
+        color: #FFF;
+        font-family: 'Montserrat-Medium';
+    }
+}
+
+.footer-top-left {
+    grid-area: left;
+    display: grid;
+    grid-template-columns: 240px 394px; //--------------width
+    grid-template-rows: 240px 99px; //--------------height
+    grid-template-areas:
+        'left           left'
+        'f-l            f-r';
+
+    &__address {
+        grid-area: left;
+
+        h4 {
+            margin-bottom: 15px;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: 'Montserrat-Bold';
+
+        }
+
+        p {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-size: 26px;
+            font-family: 'Montserrat-Bold';
+            color: #FF7701;
+        }
+
+        a {
+            font-size: 30px;
+            font-family: 'Montserrat-Bold';
+            color: #FF7701;
+            text-transform: uppercase;
+        }
+    }
+
+    &__address-btn {
+        justify-self: start;
+        align-self: end;
+        grid-area: f-r;
+        background: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 32px;
+        cursor: pointer;
+        width: 260px;
+        height: 53px;
+        color: #000;
+        text-transform: uppercase;
+        font-family: 'Montserrat-Medium';
+        font-size: 18px;
+        font-family: 'Montserrat-ExtraBold';
+
+    }
+
+    &__nav {
+        justify-self: start;
+        align-self: end;
+        grid-area: f-l;
+    }
+
+}
+
+.linked {
+    margin-bottom: 20px;
+    color: #FF7701;
+}
+
+#linked {
+    margin-right: 20px;
+}
+
+.footer-top-right {
+    grid-area: right;
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-family: 'Montserrat-Bold';
+        text-transform: uppercase;
+    }
+
+    .join-our {
+        &__form {}
+
+        &__form-btn {}
+
+        &__input-checkbox {}
+
+        &__input-email {}
+
+        &__input-name {}
+
+        &__label-checkbox {}
+
+        &__label-email {}
+
+        &__label-name {}
+
+        &__p-checkbox {}
+
+        &__p-email {}
+
+        &__p-name {}
+
+        &__small-email {}
+
+        &__small-name {}
+
+        &__strong-checkbox::after {
+            display: none;
+        }
+    }
+}
+
+
+.social {}

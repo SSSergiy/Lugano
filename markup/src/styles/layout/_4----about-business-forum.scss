@@ -1,0 +1,258 @@
+// .about-forum {
+//   position: relative;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   grid-template-rows: 1fr 1fr 1fr;
+//   grid-template-areas:
+//     'h1       f1'
+//     'h2       f1'
+//     'h3       f1';
+
+//   &__h2 {
+//     grid-area: h1;
+//     position: relative;
+//     z-index: 1;
+//     align-self: center;
+//     justify-self: start;
+//     display: flex;
+//     flex-direction: column;
+
+//     max-width: 342px;
+//     font-size: 50px;
+
+//     em {
+//     }
+//   }
+
+//   &__first-p {
+//     grid-area: h2;
+//     position: relative;
+//     z-index: 1;
+//     font-size: 20px;
+//     justify-self: start;
+//     align-self: center;
+//   }
+
+//   &__second-p {
+//     grid-area: h3;
+//     position: relative;
+//     z-index: 1;
+//     font-size: 20px;
+//     justify-self: start;
+//     align-self: center;
+//   }
+
+//   &__third-p {
+//     grid-area: f1;
+//     display: flex;
+//     // flex-direction: column;
+//   }
+
+//   &__third-p-first-img {
+//     position: absolute;
+//     z-index: 0;
+//     top: 0;
+
+//     left: 0;
+//   }
+
+//   &__third-p-second-img {
+//     position: absolute;
+//     top: 10%;
+
+//     left: 40%;
+//   }
+
+//   &__third-p-third-img {
+//     position: relative;
+//   }
+
+//   &__third-p-fourth-img {
+//     position: relative;
+//   }
+// }
+
+// .container {
+// }
+
+.about-forum {
+  position: relative;
+
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 144px 80px 118px 268px;
+  grid-template-areas:
+    'h h'
+    'first first'
+    'second second'
+    'saidbar saidbar';
+
+  padding: 0;
+  padding: 25px 0 0 14px;
+  
+@include media('≥widescreen') {
+  position: relative;
+
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 144px 80px 118px 268px;
+  grid-template-areas:
+    'h h'
+    'first first'
+    'second second'
+    'saidbar saidbar';
+
+  padding: 25px 0 0 14px;
+
+}
+
+  @include media('≥tablet') {
+    justify-items: end;
+    grid-template-columns: 553px 1fr;
+    grid-template-rows: 297px 101px 1fr;
+    grid-template-areas:
+      'h saidbar'
+      'first saidbar'
+      'second saidbar';
+    text-align: left;
+    text-align: left;
+    padding: 0 0 0 94px;
+  }
+
+  &__h2 {
+    padding: 4px 9px 23px 0;
+
+    z-index: 1;
+    grid-area: h;
+    font-size: 36px;
+    font-family: 'Mulish-Black';
+    display: flex;
+    text-transform: uppercase;
+    line-height: 101%;
+    flex-wrap: wrap;
+
+    @include media('≥phone') {
+      padding: 41px 246px 55px 0;
+      grid-area: h;
+      font-size: 50px;
+    }
+
+    strong {
+      color: #ff7701;
+    }
+
+    em {
+      font-style: normal;
+      display: flex;
+      flex-direction: column;
+    }
+    span:first-child {
+      padding: 0 0 0 0;
+      margin: 0 13px 0 0;
+    }
+  }
+
+  &__first-p {
+    z-index: 1;
+    grid-area: first;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    padding: 0 17px 0 0;
+    margin: 0 0 0 0;
+    line-height: 140%;
+    color: #161616;
+
+    @include media('≥phone') {
+      grid-area: first;
+      padding: 0 63px 0 0;
+      font-size: 20px;
+    }
+    em {
+      font-style: normal;
+    }
+  }
+
+  &__second-p {
+    padding: 0 19px 0 0;
+    margin: 0 0 0 0;
+    z-index: 1;
+
+    grid-area: second;
+    font-family: 'Montserrat-Regular';
+
+    font-size: 16px;
+    line-height: 140%;
+    color: #161616;
+
+    @include media('≥phone') {
+      grid-area: second;
+      font-size: 20px;
+    }
+    em {
+      font-style: normal;
+    }
+
+    strong {
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  &__third-p {
+    grid-area: saidbar;
+
+    display: flex;
+    justify-content: center;
+    @include media('≥phone') {
+      grid-area: saidbar;
+      justify-content: flex-start;
+    }
+  }
+
+  &__third-p-first-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    @include media('≥phone') {
+      right: 49%;
+    }
+  }
+
+  &__third-p-second-img {
+    position: absolute;
+    top: 14.4%;
+    left: 73.3%;
+    z-index: 0;
+    width: 12%;
+
+    @include media('≥tablet') {
+      position: absolute;
+      position: absolute;
+      top: 7.4%;
+      left: 42.3%;
+      width: 4%;
+      z-index: 0;
+    }
+  }
+
+  &__third-p-third-img {
+    height: 271px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 -3px;
+
+    @include media('≥tablet') {
+      height: 530px;
+      margin-right: -15px;
+    }
+  }
+
+  &__third-p-fourth-img {
+    height: 268px;
+    @include media('≥tablet') {
+      height: 520px;
+    }
+  }
+}

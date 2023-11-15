@@ -1,0 +1,65 @@
+.see-at-lugano {
+  position: relative;
+  min-height: 450px;
+  background-image: url(../images/see-you-at/group.jpg);
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__hgroup {
+    display: grid;
+    grid-template-columns: 402 586px;
+    grid-template-rows: 102px 182px;
+    grid-template-areas:
+      'title title'
+      ' ark1 ark2';
+    align-items: center;
+    justify-items: center;
+    h2 {position: relative;
+      grid-area: title;
+      color: #ffffff;
+      font-size: 120px;
+      font-family: 'Mulish-Black';
+      text-transform: uppercase;
+    }
+    p {
+      grid-area: ark2;
+      width: 586px;
+      height: 182px;
+      background-color: #ff7701;
+      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
+      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 92% 65%, 0 65%);
+      font-family: 'Mulish-Black';
+      font-size: 100px;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding-right: 40px;
+      padding-left: 40px;
+      text-align: center;
+      mark {
+        text-transform: uppercase;
+        background-color: transparent;
+        color: #ffffff;
+      }
+    }
+    strong {
+      grid-area: ark2;
+      font-size: 50px;
+      position: relative;
+      color: #ffffff;
+      top: 60px;
+      left: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+.see-at-lugano::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}

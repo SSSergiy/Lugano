@@ -18,15 +18,15 @@ h6,
     font-family: $headings-font-family;
     color: $headings-color;
     font-weight: bold;
-    margin: 0 0 10px;
+    margin: 0;
 
     @include media('≥tablet') {
-        margin-bottom: 20px;
+        
     }
 }
 
 p {
-    margin: 0 0 20px;
+    margin: 0;
 }
 
 a {

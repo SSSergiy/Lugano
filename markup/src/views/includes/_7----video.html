@@ -1,0 +1,38 @@
+<section class="lugano-videos container">
+  <h2 hidden>VIDEO</h2>
+  <span class="icon-microphone"> </span>
+  <span class="bg"> </span>
+
+  <video id="luganoVideo" autoplay muted loop>
+    <source
+      src="/images/video/file_example_MP4_480_1_5MG.mp4"
+      type="video/mp4"
+    />
+    <source src="/images/video/file_example_MP4_640_3MG.mp4" type="video/mp4" />
+    <source
+      src="/images/video/file_example_MP4_1280_10MG.mp4"
+      type="video/mp4"
+    />
+    <source
+      src="/images/video/file_example_MP4_1920_18MG.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <script>
+    var video = document.getElementById('luganoVideo');
+    function updateVideoSource() {
+      if (window.innerWidth <= 480) {
+        video.src = '/images/video/file_example_MP4_480_1_5MG.mp4';
+      } else if (window.innerWidth <= 1280) {
+        video.src = '/images/video/file_example_MP4_640_3MG.mp4';
+      } else if (window.innerWidth <= 1920) {
+        video.src = '/images/video/file_example_MP4_1280_10MG.mp4';
+      } else {
+        video.src = '/images/video/file_example_MP4_1920_18MG.mp4';
+      }
+      video.play();
+    }
+    window.onload = updateVideoSource;
+    window.onresize = updateVideoSource;
+  </script>
+</section>

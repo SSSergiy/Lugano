@@ -9,9 +9,6 @@ html {
     box-sizing: inherit;
 }
 
-* {
-    max-height: 1000000px;
-}
 
 //- HTML5 display-role reset for older browsers
 main,
@@ -39,7 +36,7 @@ h3,
 h4,
 h5,
 h6,
-address,
+
 form,
 table,
 blockquote,

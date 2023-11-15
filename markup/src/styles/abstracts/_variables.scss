@@ -83,7 +83,8 @@ $theme-colors: map-merge(("primary": $primary,
             "dark": $dark ),
         $theme-colors
 );
-// @include font-face('Mulish-Black','Mulish-Black',);
+
+
 // fonts name
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
@@ -108,8 +109,8 @@ $base-radius: 0;
 $base-radius-small: 0;
 
 // container settings
-$max-width-center-container: 1218px;
-$gutter: 15px;
+$max-width-center-container: 1288px;
+$gutter: 20px;
 $padding-container: 0 $gutter;
 
 $unit-intervals: (

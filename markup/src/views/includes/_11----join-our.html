@@ -1,0 +1,57 @@
+<section class="join-our">
+
+	<hgroup class="join-our__description ">
+		<h2 class="join-our__description-h">Join our newsletter and stay updated</h2>
+		<p class="join-our__description-p">Our curated news collection brings you up-to-date information on politics, technology, business, health,
+			entertainment, and more. Stay informed, stay connected.</p>
+	</hgroup>
+
+	<form method="POST" class="join-our__form ">
+
+		<p class="join-our__p-email">
+			<label for="email" class="join-our__label-email">
+				<span>Your email:</span>
+				<input class="join-our__input-email" type="email" id="email" name="email"  required>
+				<small class="join-our__small-email">youremail@example.com</small>
+			</label>
+		</p>
+		
+
+		<p class="join-our__p-name">
+			<label class="join-our__label-name" for="name"><span>Your name:</span>
+				<input class="join-our__input-name" type="text" id="name" name="name"  required>
+				<small class="join-our__small-name">John Smith</small>
+			</label>
+		</p>
+		
+
+		<p class="join-our__p-checkbox">
+			<label class="join-our__label-checkbox" for="agree">
+				<input class="join-our__input-checkbox"
+				type="checkbox"
+				id="agree"
+				name="agree"
+				value="yes"
+				required>
+				<span></span>
+
+				<strong class="join-our__strong-checkbox">
+					I agree to the processing of my personal data
+				</strong>
+
+			</label>
+		</p>
+
+		<button class="join-our__form-btn" form  type="submit">Subscribe</button>
+	</form>
+</section>
+<script>
+	document.querySelector(".join-our__input-email").addEventListener("input", function () {
+		var joinOurSmallEmail = document.querySelector(".join-our__small-email")
+		if (this.value.trim() !== "") {
+			joinOurSmallEmail.style.display = "none"
+		} else {
+			joinOurSmallEmail.style.display = "block"
+		}
+	});
+</script>

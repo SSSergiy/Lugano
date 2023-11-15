@@ -1,0 +1,176 @@
+.lugano-busines-forum {
+  position: relative;
+  padding: 79px 0 74px 0;
+  min-height: 359px;
+  margin-bottom: 60px;
+
+  @include media('≥phone') {
+    padding: 123px 0 74px 0;
+    min-height: 703px;
+    margin-bottom: 80px;
+  }
+
+  time {
+    text-transform: uppercase;
+  }
+  img {
+    width: 100%;
+  }
+
+  &__title {
+    position: relative;
+    background-color: #ffffff;
+    font-family: 'Mulish-Black';
+
+    font-size: 22.756px;
+    color: #161616;
+    padding: 6px 6px 5px 5px;
+    margin: -3px 18px 0 0;
+
+    @include media('≥phone') {
+      font-size: 80px;
+      padding: 10px;
+    }
+    @include media('≥widescreen') {
+      margin: -14px 61px 0 0;
+      padding: 24px 34px 19px 34px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 27px 30px 0;
+      border-color: transparent #fefefe transparent transparent;
+      top: 100%;
+      right: 0;
+
+      @include media('≥phone') {
+        border-width: 0 95px 103px 0;
+      }
+    }
+  }
+
+  &__info-text-blok {
+    position: relative;
+    margin: 0 0 0 auto;
+    max-width: 220px;
+    width: 100%;
+    background-color: #161616;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    padding: 4px 14px 0px 14px;
+    box-sizing: border-box;
+    text-align: justify;
+    font-family: 'Mulish-Black';
+    text-transform: uppercase;
+    font-size: 11.378px;
+
+    @include media('≥phone') {
+      padding: 9px 52px 10px 47px;
+      max-width: 772px;
+      font-size: 40px;
+    }
+    :after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 14px 14px 0;
+      border-color: transparent #000000 transparent transparent;
+      top: 100%;
+      right: 0;
+      z-index: 2;
+
+      @include media('≥phone') {
+        border-width: 0 48px 53px 0;
+      }
+    }
+    &__info-text-element {
+    }
+  }
+
+  &__info-blok {
+    font-family: 'Mulish-Black';
+    font-size: 8.534px;
+    background-color: #ff7701;
+    position: relative;
+    z-index: -1;
+    text-align: left;
+    padding: 15px 6px 5px 10px;
+    color: #ffffff;
+    margin: -11px 19px 59px auto;
+    max-width: 185px;
+
+    @include media('≥phone') {
+      margin: 0 0px 19px auto;
+      padding: 15px 40px;
+      font-size: 30px;
+      margin: 0 18px 102px auto;
+      max-width: 658px;
+    }
+
+    @include media('≥widescreen') {
+      margin: 0 61px 102px auto;
+    }
+
+    &__info-element {
+      display: flex;
+
+      &__info-when {
+      }
+
+      &__info-place {
+      }
+    }
+  }
+
+  &__btn {
+    z-index: 0;
+
+    &.btn {
+      background-color: #ff7701;
+      color: #ffffff;
+    }
+  }
+}
+
+.lugano-busines-forum img {
+  width: 100%;
+  position: absolute;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  top: 0;
+  left: 0;
+}
+.lugano-busines-forum__btn.btn {
+  padding: 0 0 0 0;
+  min-width: 169px;
+  min-height: 44px;
+  font-size: 14px;
+
+  @include media('≥phone') {
+    min-width: 255px;
+    height: 64px;
+    font-size: 20px;
+  }
+}
+.lugano-busines-forum__main {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  @include media('≥phone') {
+    text-align: start;
+  }
+}
+.lugano-busines-forum__info-place {
+  text-transform: uppercase;
+}

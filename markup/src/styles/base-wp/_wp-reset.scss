@@ -36,7 +36,11 @@
         display: flex;
     }
 }
-
+address {
+    display: initial; 
+    font-style: normal;
+  }
+  
 [id="content"] {
     padding: {
         top: 30px;

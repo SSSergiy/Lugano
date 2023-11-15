@@ -1,0 +1,66 @@
+.sponsors {
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 120px 300px;
+  grid-template-areas:
+    'title ст'
+    ' ark1 ark2';
+  align-items: center;
+  justify-items: center;
+
+  &__article1 {
+    // padding: 50px;
+    grid-area: ark1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 104%;
+    height: 104%;
+    background-image: url('../images/sponsors/bg-left.svg'),
+      url('../images/sponsors/bg-right.svg'),
+      url('../images/sponsors/bg-bottom.svg'),
+      url('../images/sponsors/bg-top.svg');
+    background-position: -12px 0, 0px 7px, 5px 0, 5px 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  &__article2 {
+    width: 104%;
+    height: 104%;
+
+    grid-area: ark2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../images/sponsors/bg-left.svg'),
+      url('../images/sponsors/bg-right.svg'),
+      url('../images/sponsors/bg-bottom.svg'),
+      url('../images/sponsors/bg-top.svg');
+    background-position: 8px 6px, 100% 6px, 15px 0, 15px 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  &__article-img {
+    margin-bottom: 20px;
+  }
+  &__article-p {
+    line-height: 140%;
+    font-size: 16px;
+    max-width: 330px;
+    strong {
+      font-weight: normal;
+      color: inherit;
+    }
+  }
+  &__title {
+    max-width: 330px;
+
+    grid-area: title;
+    justify-self: start;
+    font-size: 50px;
+    font-family: 'Mulish-Black';
+  }
+}

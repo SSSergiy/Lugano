@@ -1,35 +1,15 @@
-// -----------------------------------------------------------------------------
-// This file contains all @font-face declarations, if any.
-// -----------------------------------------------------------------------------
+
+  @include font-face('NunitoSans_7pt-Bold', 'NunitoSans_7pt-Bold', 500, normal);
+
+  
+  @include font-face('Montserrat-ExtraBold', 'Montserrat-ExtraBold', 800, normal);
+  @include font-face('Montserrat-Bold', 'Montserrat-Bold', 700, normal);
+  @include font-face('Montserrat-SemiBold', 'Montserrat-SemiBold', 600, normal);
+  @include font-face('Montserrat-Medium', 'Montserrat-Medium', 500, normal);
+  @include font-face('Montserrat-Regular', 'Montserrat-Regular', 400, normal);
 
 
-// -----------------------------------------------------------------------------
-//  @Example usage of font-family mixin;
-//
-//  $font-primary: (
-//    'Light': $font-weight-light,
-//    'Regular': $font-weight-normal,
-//  );
-//
-//  $font-secondary: (
-//    'Thin': $font-weight-thin,
-//    'Bold': $font-weight-bold,
-//  );
-//
-//  @param {
-//    $fontName: Filename: string;
-//    $fontWeight: 100|300|400|normal|bold;
-//    $fontStyle: normal/italic/etc;
-//  }
-//
-//  // Filename: Base-Regular.woff
-//  @each $suffix, $weight in $font-primary {
-//    @include fontface('Base', 'Base-#{$suffix}', $weight, normal);
-//  }
-//
-//  @each $suffix, $weight in $font-secondary {
-//    @include fontface('Second Font', '${LocalFontName}-#{$suffix}', $weight, normal);
-//    @include fontface('Second Font', '${LocalFontName}-#{$suffix}Italic', $weight, italic);
-//  }
-// -----------------------------------------------------------------------------
-
+  @include font-face('Mulish-Black', 'Mulish-Black', 900, normal);
+  @include font-face('Mulish-ExtraBold', 'Mulish-ExtraBold', 800, normal);
+  @include font-face('Mulish-Bold', 'Mulish-Bold', 700, normal);
+  @include font-face('Mulish-Medium', 'Mulish-Medium', 500, normal);

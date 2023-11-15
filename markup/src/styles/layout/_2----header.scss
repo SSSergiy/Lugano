@@ -1,0 +1,370 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site
+// -----------------------------------------------------------------------------
+[id='header'] {
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+  padding: 25px 15px 10px 15px;
+  z-index: 2;
+
+  @include media('≥phone') {
+    padding: 25px 20px;
+  }
+}
+
+.header-holder {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include media('≥phone') {
+    gap: 50px;
+  }
+}
+
+.logo {
+  height: 60px;
+  width: 130px;
+  min-width: 100px;
+
+  @include media('≥phone') {
+    width: 177.9px;
+    margin-right: 20px;
+  }
+
+  img {
+  }
+}
+
+[id='nav'] {
+  @extend %clearfix;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav-drop {
+  @include animate(all);
+  color: $black;
+  padding: 10px 15px;
+  text-align: center;
+
+  @include media('≥desktop') {
+    padding: 0;
+  }
+
+  ul {
+    @extend %listreset;
+    gap: 21px;
+  }
+
+  > ul {
+    @include media('≥desktop') {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+    padding: 5px 0;
+
+    @include media('≥desktop') {
+      padding: 0;
+    }
+
+    + li {
+      @include media('≥widescreen') {
+        padding-left: 20px;
+      }
+    }
+
+    &.active {
+      a {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover {
+      > a {
+        opacity: 0.5;
+      }
+
+      > ul {
+        display: block;
+      }
+    }
+
+    > ul {
+      background: $gray;
+      display: none;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+
+      @include media('≥tablet') {
+        padding-top: 10px;
+        width: 120px;
+        position: absolute;
+      }
+
+      ul {
+        @include media('≥tablet') {
+          padding-top: 0;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 120px;
+        }
+      }
+
+      li {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.nav-opener {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+
+  @include media('≥desktop') {
+    display: none;
+  }
+
+  &:before,
+  &:after,
+  span {
+    @include animate(transform opacity);
+    background: $black;
+    position: absolute;
+    top: 22%;
+    left: -1%;
+    right: -22%;
+    height: 3px;
+    transform: translateY(-50%);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+  }
+
+  &:before {
+    transform: translateY(-9px);
+  }
+
+  &:after {
+    transform: translateY(6px);
+  }
+
+  &:hover {
+    &:before,
+    &:after,
+    span {
+      background-color: gray;
+    }
+  }
+
+  .nav-active & {
+    span {
+      opacity: 0;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      transform: rotate(45deg) translateY(0);
+    }
+
+    &:after {
+      transform: rotate(-45deg) translateY(0);
+    }
+  }
+}
+
+:root {
+  --size-skew: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  clip-path: polygon(
+    var(--size-skew) 0,
+    100% 0,
+    100% calc(100% - var(--size-skew)),
+    calc(100% - var(--size-skew)) 100%,
+    0 100%,
+    0 var(--size-skew)
+  );
+  transition: background-color 0.3s ease;
+  font-family: 'Mulish-ExtraBold';
+  transition: color 0.2s ease;
+  box-sizing: border-box;
+  max-width: 180px;
+  min-height: 50px;
+  font-size: 16px;
+
+  @include media('≥widescreen') {
+
+  }
+}
+
+.header-holder__btn {
+  //phone
+  width: 100%;
+  max-width: 149px;
+  padding: 0 0 0 0;
+  min-height: 43px;
+  margin: -16px 0 0 0;
+  font-size: 14px;
+
+  @include media('≥phone') {
+    margin: 0 0 0 0;
+    max-width: 255px;
+    min-height: 64px;
+    font-size: 20px;
+  }
+}
+
+.primary-menu {
+  font-family: 'Montserrat-Medium';
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 119, 1, 1);
+  clip-path: polygon(
+    0 var(--size-skew),
+    var(--size-skew) 0,
+    100% 0,
+    100% calc(100% - var(--size-skew)),
+    calc(100% - var(--size-skew)) 100%,
+    0 100%,
+    0 var(--size-skew),
+    1px calc(var(--size-skew) + 1px),
+    1px calc(100% - 1px),
+    calc(100% - var(--size-skew) - 1px) calc(100% - 1px),
+    calc(100% - 1px) calc(100% - var(--size-skew) - 1px),
+    calc(100% - 1px) 1px,
+    calc(var(--size-skew) + 1px) 1px,
+    1px calc(var(--size-skew) + 1px)
+  );
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: rgba(255, 119, 1, 1);
+  color: rgb(255, 255, 255);
+}
+
+input {
+  display: none;
+}
+
+.drop-holld {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  top: 100%;
+  right: 0;
+  background: #ffff;
+  left: 0;
+  padding-bottom: 15px;
+  padding-left: 15px;
+
+  @include media('≥desktop') {
+    padding-bottom: 0;
+    opacity: 1;
+    visibility: visible;
+    flex-grow: 1;
+    position: static;
+    align-items: center;
+    gap: 19px;
+    display: flex;
+  }
+
+  @include media('≥widescreen') {
+    gap: 50px;
+  }
+
+  .nav-active & {
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+  }
+}
+
+.nav-opener {
+}
+
+.select {
+  display: block;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+
+  @include media('≥desktop') {
+    display: inline-block;
+  }
+
+  &:hover {
+    .list {
+      display: block;
+    }
+  }
+
+  .list {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 5px;
+      text-align: center;
+      line-height: 26px;
+      cursor: pointer;
+      background-image: url('../images/header/arrow.svg');
+      margin-left: 8px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  overflow: hidden;
+  width: 70px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: none;
+  list-style: none;
+}
