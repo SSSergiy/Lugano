@@ -1,18 +1,31 @@
 .ticker-tape {
-	margin-bottom: 144px;
+  margin-bottom: 24px;
+
+  @include media('≥tablet') {
+    margin-bottom: 76px;
+  }
+
   &__red-block {
     position: relative;
-    padding-top: 40px;
     z-index: 2;
-    height: 124px;
+    height: 33px;
     background-color: #ff7701;
+
+    @include media('≥tablet') {
+      height: 124px;
+      padding-top: 31px;
+    }
   }
 
   &__red-item {
     display: inline-block;
-    margin-right: 30%;
-		position: relative;
-		left: -80%; 
+    margin-right: 4%;
+    position: relative;
+    left: -80%;
+
+    @include media('≥tablet') {
+      margin-right: 30%;
+    }
   }
 
   &__red-titlegroup {
@@ -21,9 +34,8 @@
     margin-right: 16px;
 
     strong {
-      width: 168px;
-      height: 52px;
-
+      width: 48px;
+      height: 19px;
       background-color: #161616;
       -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
       clip-path: polygon(0% 0%, 100% 0, 100% 100%, 95% 65%, 0 65%);
@@ -31,21 +43,38 @@
       justify-content: center;
       align-items: center;
 
+      @include media('≥tablet') {
+        width: 168px;
+        height: 52px;
+      }
+
       span {
         color: #ffffff;
-        padding-bottom: 17px;
-        line-height: 27px;
-        font-family: $base-font-1;
+        padding-bottom: 8px;
         font-weight: 900;
-        font-size: 30px;
+        font-size: 9px;
+        font-family: $base-font-1;
+
+        @include media('≥tablet') {
+          padding-bottom: 17px;
+          font-size: 30px;
+          line-height: 27px;
+        }
       }
     }
 
     b {
       position: absolute;
-      top: 34px;
-      right: 21px;
-      font-size: 13px;
+      top: 14px;
+      right: 4px;
+      font-size: 4px;
+
+      @include media('≥tablet') {
+        font-size: 7px;
+        right: 10px;
+        top: 34px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -56,26 +85,42 @@
       color: #161616;
       font-family: $base-font-1;
       font-weight: 900;
-      font-size: 30px;
       line-height: 120%;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 9px;
+      top: 5px;
+      right: 16px;
+
+      @include media('≥tablet') {
+        top: 14px;
+        font-size: 30px;
+      }
     }
   }
 
- 
   &__black-block {
     position: relative;
-    z-index: 1;
-    color: #ffffff;
+    z-index: 2;
+    height: 33px;
     background-color: #000000;
-    padding-top: 40px;
-    height: 124px;
+
+    @include media('≥tablet') {
+      top: 26px;
+      height: 124px;
+      padding-top: 31px;
+    }
   }
 
   &__black-item {
     display: inline-block;
-    margin-right: 30%;
-		position: relative;
-		left: -40%; 
+    margin-right: 4%;
+    position: relative;
+    left: -80%;
+
+    @include media('≥tablet') {
+      margin-right: 30%;
+    }
   }
 
   &__black-titlegroup {
@@ -83,30 +128,50 @@
     display: inline-block;
     margin-right: 16px;
     strong {
-      width: 168px;
-      height: 52px;
-      background-color: #ff7701;
-      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
-      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 95% 65%, 0 65%);
+      width: 48px;
+      height: 19px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #ffffff;
+
+      background-color: #ff7701;
+      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
+      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 95% 65%, 0 65%);
+
+      @include media('≥tablet') {
+        width: 168px;
+        height: 52px;
+      }
 
       span {
         color: #ffffff;
-        padding-bottom: 17px;
-        line-height: 27px;
-        font-family: $base-font-1;
+        padding-bottom: 8px;
         font-weight: 900;
-        font-size: 30px;
+        font-size: 9px;
+        font-family: $base-font-1;
+
+        @include media('≥tablet') {
+          padding-bottom: 17px;
+          font-size: 30px;
+          line-height: 27px;
+        }
       }
     }
 
     b {
       position: absolute;
-      top: 34px;
-      right: 21px;
-      font-size: 13px;
+      top: 14px;
+      right: 4px;
+      font-size: 4px;
+      color: #ffffff;
+
+      @include media('≥tablet') {
+        font-size: 7px;
+        right: 10px;
+        top: 34px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -117,8 +182,15 @@
       color: #ffffff;
       font-family: $base-font-1;
       font-weight: 800;
-      font-size: 30px;
+      font-size: 9px;
       line-height: 120%;
+      position: relative;
+      top: 4px;
+      text-transform: uppercase;
+
+      @include media('≥tablet') {
+        font-size: 30px;
+      }
     }
   }
 }

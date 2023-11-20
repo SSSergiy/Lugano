@@ -7,9 +7,10 @@
   justify-content: center;
   align-items: center;
   gap: 125px;
-  margin-bottom: 80px;
+  margin-bottom: 44px;
 
   @include media('≥tablet') {
+    margin-bottom: 74px;
     padding: 0;
     min-height: 697px;
   }
@@ -55,7 +56,6 @@
   &__description::before {
     content: '';
     width: 99%;
-
     min-height: 99%;
     top: 2px;
     left: 2px;

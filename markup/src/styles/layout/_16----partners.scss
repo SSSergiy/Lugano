@@ -1,39 +1,177 @@
+// @mixin set-z-index($start-index, $end-index) {
+//   $i: $start-index;
+
+//   @for $i from $start-index through $end-index {
+//     &:nth-child(#{$i}) {
+//       z-index: $i;
+//     }
+//   }
+// }
+
+.partners-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+
+  > li {
+    position: relative;
+    width: 50%;
+
+    @include media('≥tablet') {
+      width: calc(100% / 3);
+    }
+
+    @include media('≥desktop') {
+      width: 20%;
+    }
+
+    // @include media('≥widescreen') {
+    //   width: 20%;
+    // }
+
+    @include media('≥tablet', '<desktop') {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        > .partners__article {
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 1px;
+            left: 8px;
+            right: 8px;
+            background: green;
+          }
+        }
+      }
+      &:nth-child(3n + 1) {
+        > .partners__article {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            left: 0;
+            background: red;
+          }
+        }
+      }
+    }
+
+    @include media('≥desktop') {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        > .partners__article {
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 1px;
+            left: 8px;
+            right: 8px;
+            background: red;
+          }
+        }
+      }
+
+      &:nth-child(5n + 1) {
+        > .partners__article {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            left: 0;
+            background: red;
+          }
+        }
+      }
+      // &:nth-child(3n + 4) {
+      //   > .partners__article {
+      //     &:before {
+      //       display: none;
+      //     }
+      //   }
+      // }
+    }
+
+    @include media('<tablet') {
+      &:nth-child(1),
+      &:nth-child(2) {
+        > .partners__article {
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 1px;
+            left: 8px;
+            right: 8px;
+            background: indigo;
+          }
+        }
+      }
+
+      &:nth-child(2n + 1) {
+        > .partners__article {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            left: 0;
+            background: red;
+          }
+        }
+      }
+    }
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      background-color: red;
+    }
+
+    &:after {
+      bottom: 0;
+      left: 8px;
+      right: 8px;
+      height: 1px;
+    }
+    &:before {
+      top: 8px;
+      bottom: 8px;
+      right: 0;
+      width: 1px;
+    }
+  }
+}
 .partners {
   margin-bottom: 148px;
-  display: grid;
-  grid-template-columns: 249px 249px 249px 249px 249px;
-  grid-template-rows: 160px 160px 160px 160px; 
-  grid-template-areas:
-    'title title title title title'
-    'w1    w2 w3 w4 w5'
-    'q1    q2 q3 q4 q5'
-    'j1    j2 j3 j4 j5'
-    'y1    y2 y3 y4 y5';
-  align-items: center;
-  justify-items: center;
 
   &__article {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 101%;
-    height: 101%;
-    background-image: url('../images/partners/border/bg-left.svg'),
-      url('../images/partners/border/bg-right.svg'),
-      url('../images/partners/border/bg-bottom.svg'),
-      url('../images/partners/border/bg-top.svg');
-    background-position: 100% 11px, 0px 11px, 11px 0, 11px 100%;
-    background-repeat: no-repeat;
-    background-size: auto;
+    width: 100%;
+    min-height: 164px;
+    padding: 10px;
   }
 
   &__title {
-    grid-area: title;
     line-height: 120%;
     font-size: 50px;
     font-family: $base-font-1;
     font-weight: 900;
-    justify-self: start;
+    text-transform: uppercase;
   }
 }

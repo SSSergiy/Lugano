@@ -35,14 +35,7 @@ a[href*='mailto:'] {
   top: -9999px !important;
 }
 
-.viewport-section {
-  background: #ccc;
-  height: 450px;
-  margin: 10px 0;
-}
-
 .viewport-section.in-viewport {
-  background: #0f0;
 }
 // $maxWidth: 1920;
 // $maxWidthContainer: 1248;
