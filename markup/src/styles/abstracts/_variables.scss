@@ -90,7 +90,9 @@ $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 
 
-$base-font: $base-font-sans-serif;//добавлять шрифт через кому с передi $base-font-sans-serif
+$base-font:'Montserrat',  $base-font-sans-serif;
+$base-font-1:'Mulish',  $base-font-sans-serif;
+$base-font-2:'NunitoSans_7pt-Bold',  $base-font-sans-serif;
 
 // Body
 $base-text-color: $black !default;

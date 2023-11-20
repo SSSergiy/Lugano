@@ -1,30 +1,58 @@
 <section class="discover-power ">
-  <h2 class="discover-power__title container">
-    Discover the Power of collaboration at the <strong>Lugano</strong>
-    <em>Business Forum</em>
-  </h2>
-  <ul class="discover-power__info-list container">
-    <li><data value="2">2</data> <span>Days of the forum</span></li>
-    <li><data value="100+">100+</data> <span>Speakers</span></li>
-    <li><data value="30+">30+</data> <span>Topics for discussion</span></li>
-    <li><data value="1000+">1000+</data> <span>Participants</span></li>
-  </ul>
-  <p class="discover-power__p-first container">
-    The <strong>Lugano</strong> <strong>Business Forum 2024</strong> is an
-    exceptional gathering of entrepreneurs, industry leaders, policymakers, and
-    innovators from around the world.
-  </p>
-  <p class="discover-power__p-second container">
-    This prestigious event aims to create an engaging platform for collaborative
-    discussions, networking, and knowledge-sharing, focusing on unlocking
-    opportunities for global growth.
-  </p>
-  <p class="discover-power__p-third container">
-    Participants will have the chance to explore <em>emerging trends</em>,
-    engage in insightful conversations, and build
-    <em>strategic partnerships</em> that will drive economic growth and
-    innovation on a global scale.
-  </p>
-  <button class="discover-power__btn btn">WATCH THE RECORDING</button>
-  <img class="discover-power__arrow-img  " decoding="async" src="/images/discover-power/arrow.svg" alt="Get ticket" />
+
+  <div class="container">
+    <h2 class="discover-power__title ">
+      Discover the Power of collaboration at the <span>Lugano</span>
+      Business Forum
+    </h2>
+    <ul class="discover-power__info-list ">
+      <li><data value="2">2</data> <span>Days of the forum</span></li>
+      <li><data value="100+">100+</data> <span>Speakers</span></li>
+      <li><data value="30+">30+</data> <span>Topics for discussion</span></li>
+      <li><data value="1000+">1000+</data> <span>Participants</span></li>
+    </ul>
+    <p>
+      The <strong>Lugano</strong> <strong>Business Forum 2024</strong> is an
+      exceptional gathering of entrepreneurs, industry leaders, policymakers, and
+      innovators from around the world.
+    </p>
+    <p>
+      This prestigious event aims to create an engaging platform for collaborative
+      discussions, networking, and knowledge-sharing, focusing on unlocking
+      opportunities for global growth.
+    </p>
+    <p>
+      Participants will have the chance to explore emerging trends,
+      engage in insightful conversations, and build
+      strategic partnerships that will drive economic growth and
+      innovation on a global scale.
+    </p>
+    <button class="discover-power__btn btn">WATCH THE RECORDING</button>
+    <img class="discover-power__arrow-img  " decoding="async" src="images/discover-power/arrow.svg" alt="Get ticket" />
+  </div>
 </section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var dataElements = document.querySelectorAll('.discover-power__info-list data')
+    dataElements.forEach(function (element) {
+      var endValue = parseInt(element.getAttribute('value'))
+      animateCount(element, 0, endValue, 2000)
+    })
+    function animateCount(element, start, end, duration) {
+      var startTime = new Date().getTime()
+      var endTime = startTime + duration
+      var now = startTime
+      function update() {
+        now = new Date().getTime()
+        var progress = Math.min((now - startTime) / duration, 1)
+        var currentCount = Math.floor(progress * (end - start) + start)
+        element.textContent = currentCount > 0 ? currentCount + '+' : currentCount
+        if (progress < 1) {
+          requestAnimationFrame(update)
+        }
+      }
+
+      update()
+    }
+  });
+</script>

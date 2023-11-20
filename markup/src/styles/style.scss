@@ -1,13 +1,14 @@
-// @import 'base-wp/head-wp';
-//375 maket mobile size
+@import 'base-wp/head-wp';
+// 375 maket mobile size
 //1440 maket desktop size
 // devices viewport width starts at:
 $breakpoints: (
   xs-phone: 320px,
   phone: 480px,
+  samsung: 525px,
   tablet: 768px,
   desktop: 992px,
-  widescreen: 1250px 
+  widescreen: 1250px
 );
 
 // keywords
@@ -30,6 +31,9 @@ $media-expressions: (
 
 // 2. Vendors: include media mixins and mormalize imported from node_modules
 @import 'vendors/normalize';
+@import 'vendors/owl.carousel';
+@import 'vendors/owl.theme.default';
+
 @import 'vendors/icomoon';
 
 @import '~include-media/dist/include-media';
@@ -39,7 +43,7 @@ $media-expressions: (
 @import 'base/helpers';
 @import 'base/fonts';
 @import 'base/typography';
-// @import 'base/forms';
+@import 'base/forms';
 // @import 'base/web_accessibility';
 
 // base WP
@@ -77,4 +81,3 @@ $media-expressions: (
 
 // 7. Themes
 // @import 'themes/themes';
-

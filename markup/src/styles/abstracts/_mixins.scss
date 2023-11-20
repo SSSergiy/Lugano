@@ -311,12 +311,12 @@ $animation-speed: 0.3s !default;
  
 
 
-//font-face
+//font-face.
 @mixin font-face($font-name, $font-path, $weight, $style) {
     @font-face {
         font-family: '#{$font-name}';
-        src: url('/fonts/#{$font-path}.woff2') format('woff'),
-        url('/fonts/#{$font-path}.woff') format('woff');
+        src: url('../fonts/#{$font-path}.woff2') format('woff'),
+        url('../fonts/#{$font-path}.woff') format('woff');
         font-weight: $weight;
         font-style: $style;
     }

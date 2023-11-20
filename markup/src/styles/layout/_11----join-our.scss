@@ -1,5 +1,6 @@
 .join-our {
-  min-height: 700px;
+  padding: 33px 0;
+  margin: 0 0 0 0;
   background-color: #161616;
   color: rgba(255, 255, 255, 1);
   display: flex;
@@ -8,11 +9,31 @@
   gap: 125px;
   margin-bottom: 80px;
 
+  @include media('≥tablet') {
+    padding: 0;
+    min-height: 697px;
+  }
+  .container {
+    display: flex;
+
+    flex-direction: column;
+    @include media('≥tablet') {
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 8%;
+    }
+
+    @include media('≥desktop') {
+      gap: 125px;
+    }
+  }
+
   &__description {
-    padding: 60px;
-    margin: 0 0 0 0;
-    width: 662px;
-    min-height: 518px;
+    padding: 25px 15px;
+    margin: 0 0 44px 0;
+    width: 100%;
+    min-height: 313px;
     background-color: #ff7701;
     -webkit-clip-path: polygon(77% 0, 100% 23%, 100% 100%, 0 100%, 0 0);
     clip-path: polygon(77% 0, 100% 23%, 100% 100%, 0 100%, 0 0);
@@ -20,14 +41,22 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    justify-content: space-between;
+    gap: 56px;
+
+    @include media('≥tablet') {
+      margin: 0 0 0 0;
+      gap: 107px;
+      min-height: 518px;
+      padding: 60px;
+      width: 50%;
+    }
   }
 
   &__description::before {
     content: '';
-    width: 658px;
-    min-height: 514px;
+    width: 99%;
+
+    min-height: 99%;
     top: 2px;
     left: 2px;
     background-color: #161616;
@@ -40,223 +69,54 @@
   &__description-h {
     position: relative;
     color: #ff7701;
-    font-size: 50px;
-    font-family: 'Mulish-Black';
+    font-size: 36px;
+    line-height: 43px;
+    font-family: $base-font-1;
+    font-weight: 900;
     z-index: 2;
     max-width: 410px;
     text-transform: uppercase;
+
+    @include media('≥desktop') {
+      line-height: 60px;
+      font-size: 50px;
+    }
   }
 
   &__description-p {
     position: relative;
     color: rgba(255, 255, 255, 1);
-    font-size: 20px;
-    z-index: 2;
-    font-family: 'Montserrat-Regular';
-  }
-
-  &__form {
-    width: 500px;
-    margin: 0 0 0 0;
-  }
-
-  &__form-btn {
-    width: 100%;
-    border: 1px solid #ff7701;
-    background-color: #ff7701;
-    padding: 14px;
-    color: #ffffff;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-
-  &__strong-checkbox {
     font-size: 14px;
-    color: #fff;
-    font-family: 'Montserrat-Regular';
-    width: 322px;
-  }
+    line-height: 19px;
+    z-index: 2;
 
-  &__input-checkbox {
-    display: block;
-
-    width: 0;
-    height: 0;
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-  }
-
-  &__p-checkbox {
-    position: relative;
-    margin-bottom: 26px;
-    border-radius: 2px;
-    padding-left: 30px;
-  }
-
-  &__label-checkbox {
-    cursor: pointer;
-    span {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 20px;
-      height: 20px;
-      border-radius: 5px;
-      border: 1px solid #ff7701;
-      background: #161616;
-      backdrop-filter: blur(5px);
-    }
-
-    span::before {
-      display: none;
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 30px;
-      top: 0px;
-      left: 0px;
-      background-image: url(../images/lnes/mark.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      z-index: 2;
-    }
-    strong::after {
-      display:block;
-      content: '';
-      position: absolute;
-      width: 96px;
-      height: 96px;
-      top: -320px;
-      left: 376px;
-      background-image: url(../images/lnes/newsletter-arrow.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      z-index: 2;
+    @include media('≥tablet') {
+      font-size: 20px;
+      line-height: 28px;
     }
   }
+}
 
-  &__input-checkbox:checked + span::before {
-    display: block;
-  }
+.join-our {
+  .container {
+    .footer-top-right {
+      width: 100%;
 
-  ////////////////////////////////////////////////////////////////////////////////////////
+      @include media('≥tablet') {
+        width: 40%;
+      }
 
-  &__input-name {
-    width: 100%;
-    height: 48px;
-    display: block;
-    padding: 0 0 0 0;
-    bottom: none;
-    outline: none;
-    background: transparent;
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    left: -45px;
-    color: #f5f5f5;
-    padding-left: 15px;
-  }
+      img {
+        position: relative;
+        top: -65px;
+        left: 80%;
+        margin-bottom: 23px;
+        display: none;
 
-  &__label-name {
-    width: 100%;
-    display: block;
-    font-size: 16px;
-    position: absolute;
-    top: 0px;
-    left: 45px;
-
-    span {
-      padding: 5px;
-      background: #161616;
-      position: absolute;
-      top: -15px;
-      left: 0px;
-      z-index: 3;
+        @include media('≥widescreen') {
+          display: block;
+        }
+      }
     }
-  }
-
-  &__p-name {
-    position: relative;
-    border: 1px solid #ff7701;
-    margin-bottom: 50px;
-    min-height: 50px;
-    padding: 0 0 0 0;
-    border-radius: 2px;
-  }
-
-  &__input-name:focus ~ .join-our__small-name,
-  &__input-name:valid ~ .join-our__small-name {
-    display: none;
-  }
-
-  &__small-name {
-    cursor: text;
-    color: rgba(183, 183, 183, 1);
-    font-size: 18px;
-    font-family: 'Montserrat-Medium';
-    position: absolute;
-    top: 13px;
-    left: -25px;
-  }
-
-  ////////////////////////////////////////////////////////////////////////////////////////
-  &__p-email {
-    position: relative;
-    border: 1px solid #ff7701;
-    margin-bottom: 50px;
-    min-height: 50px;
-    padding: 0 0 0 0;
-    border-radius: 2px;
-  }
-
-  &__input-email {
-    width: 100%;
-    height: 48px;
-    display: block;
-    padding: 0 0 0 0;
-    bottom: none;
-    outline: none;
-    background: transparent;
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    left: -45px;
-    color: #f5f5f5;
-    padding-left: 15px;
-  }
-
-  &__label-email {
-    width: 100%;
-    display: block;
-    font-size: 16px;
-    position: absolute;
-    top: 0px;
-    left: 45px;
-
-    span {
-      padding: 5px;
-      background: #161616;
-      position: absolute;
-      top: -15px;
-      left: 0px;
-      z-index: 3;
-    }
-  }
-
-  &__input-email:focus ~ .join-our__small-email,
-  &__input-email:valid ~ .join-our__small-email {
-    display: none;
-  }
-
-  &__small-email {
-    cursor: text;
-
-    color: rgba(183, 183, 183, 1);
-    font-size: 18px;
-    font-family: 'Montserrat-Medium';
-    position: absolute;
-    top: 13px;
-    left: -25px;
   }
 }

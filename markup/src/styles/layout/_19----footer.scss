@@ -6,165 +6,206 @@
 // }
 
 .footer {
-    place-items: center;
-    place-content: center;
-    position: relative;
-    width: 100vw;
-    left: 0;
-    right: 0;
+  padding-bottom: 40px;
+
+  color: #ffffff;
+  background-color: #161616;
+  padding-top: 31px;
+
+  @include media('≥tablet') {
     padding-top: 60px;
-    padding-bottom: 40px;
-    color: #FFFFFF;
-    background-color: #161616;
-    display: grid;
-    grid-template-columns: 633px 182px 432px; //--------------width
-    grid-template-rows: 325px 95px; //--------------height
-    grid-template-areas:
-        'left         middle   right'
-        'foot      foot      foot';
+    // padding-bottom: 40px;
+  }
 
-}
-
-
-.footer-bottom {
-    grid-area: foot;
-    display: flex;
-    align-items: flex-end;
-    align-self: end;
-    justify-content: space-between;
+  .join-our__form {
     width: 100%;
 
-    &__copyright {
-        font-family: 'Montserrat-Medium';
-        font-size: 18px;
-
+    @include media('≥desktop') {
+      width: 432px;
     }
+  }
+}
+.footer-panel {
+  margin: 0 0 31px 0;
 
-    &__copyright-img {}
-
-    &__policy {
-        text-decoration-line: underline;
-        font-size: 18px;
-        color: #FFF;
-        font-family: 'Montserrat-Medium';
-    }
+  @include media('≥desktop') {
+    margin: 0 0 74px 0;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+
+  @include media('≥tablet') {
+    font-size: 18px;
+    padding: 0 180px;
+    position: relative;
+  }
+
+  &__copyright {
+    width: 100%;
+    text-align: left;
+
+    @include media('≥tablet') {
+      text-align: center;
+    }
+  }
+  &__copyright-img {
+    @include media('≥tablet') {
+      position: absolute;
+      right: 0;
+      top: -14px;
+    }
+  }
+  &__policy {
+    text-decoration-line: underline;
+    color: #fff;
+
+    @include media('≥tablet') {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.nav-block {
+  display: flex;
+  justify-content: space-between;
+
+  @include media('≥desktop') {
+    justify-content: flex-start;
+
+    gap: 111px;
+  }
+}
 .footer-top-left {
-    grid-area: left;
-    display: grid;
-    grid-template-columns: 240px 394px; //--------------width
-    grid-template-rows: 240px 99px; //--------------height
-    grid-template-areas:
-        'left           left'
-        'f-l            f-r';
+  padding: 0 0 42px 0;
 
-    &__address {
-        grid-area: left;
+  @include media('≥desktop') {
+    padding: 5px 15px 0 0;
 
-        h4 {
-            margin-bottom: 15px;
-            font-size: 30px;
-            text-transform: uppercase;
-            font-family: 'Montserrat-Bold';
+    width: 56%;
+  }
 
-        }
+  &__address {
+    margin: 0 0 27px 0;
+    h4 {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 5px;
 
-        p {
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-size: 26px;
-            font-family: 'Montserrat-Bold';
-            color: #FF7701;
-        }
-
-        a {
-            font-size: 30px;
-            font-family: 'Montserrat-Bold';
-            color: #FF7701;
-            text-transform: uppercase;
-        }
+      @include media('≥tablet') {
+        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 30px;
+      }
     }
 
-    &__address-btn {
-        justify-self: start;
-        align-self: end;
-        grid-area: f-r;
-        background: #FFFFFF;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 14px 32px;
-        cursor: pointer;
-        width: 260px;
-        height: 53px;
-        color: #000;
-        text-transform: uppercase;
-        font-family: 'Montserrat-Medium';
-        font-size: 18px;
-        font-family: 'Montserrat-ExtraBold';
+    p {
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff7701;
 
+      @include media('≥tablet') {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
     }
 
-    &__nav {
-        justify-self: start;
-        align-self: end;
-        grid-area: f-l;
+    a {
+      font-weight: 700;
+      color: #ff7701;
+      text-transform: uppercase;
+      font-size: 14px;
+      @include media('≥tablet') {
+        font-size: 26px;
+      }
     }
+  }
 
+  &__address-btn {
+    border: 0;
+    justify-self: start;
+    align-self: end;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    width: 160px;
+    padding: 12px 10px;
+    line-height: 18px;
+
+    @include media('≥tablet') {
+      font-size: 20px;
+      padding: 14px 32px;
+      line-height: 24px;
+      width: 260px;
+    }
+  }
+
+  &__nav {
+    justify-self: start;
+    align-self: end;
+    width: 50%;
+
+    @include media('≥tablet') {
+      width: auto;
+    }
+  }
 }
 
 .linked {
-    margin-bottom: 20px;
-    color: #FF7701;
+  margin-bottom: 13px;
+  color: #ff7701;
 }
 
-#linked {
-    margin-right: 20px;
+.social {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 19px;
+  li {
+    width: 38px;
+    @include media('≥desktop') {
+      width: 49px;
+    }
+  }
 }
 
 .footer-top-right {
-    grid-area: right;
+  @include media('≥desktop') {
+    width: 432px;
+  }
 
-    &__title {
-        margin-bottom: 20px;
-        font-size: 30px;
-        font-family: 'Montserrat-Bold';
-        text-transform: uppercase;
+  &__title {
+    margin-bottom: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    @include media('≥tablet') {
+      font-size: 30px;
     }
-
-    .join-our {
-        &__form {}
-
-        &__form-btn {}
-
-        &__input-checkbox {}
-
-        &__input-email {}
-
-        &__input-name {}
-
-        &__label-checkbox {}
-
-        &__label-email {}
-
-        &__label-name {}
-
-        &__p-checkbox {}
-
-        &__p-email {}
-
-        &__p-name {}
-
-        &__small-email {}
-
-        &__small-name {}
-
-        &__strong-checkbox::after {
-            display: none;
-        }
-    }
+  }
 }
-
-
-.social {}

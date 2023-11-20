@@ -1,46 +1,114 @@
+.owl-stage {
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
 .was-before {
-	padding: 453px 0 0 0;
-	&__title {
-		font-size: 50px;
-		font-family: 'Mulish-Black';
-		text-transform: uppercase;
-		strong {
-			color: #FF5E00;
-		}
-	}
+  max-width: 1440px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 58px;
 
-	&__slider-block {
-	margin: 0 0 0 0;
-padding: 30px 000;
-display: flex;
+  @include media('≥desktop') {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    line-height: 38px;
+    margin: 0px 0 13px 0;
+    font-size: 36px;
+    font-family: $base-font-1;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+
+    @include media('≥phone') {
+      margin: 0px 0 64px 0;
+
+      display: block;
+      font-size: 50px;
+    }
+
+    span {
+      color: #ff7701;
+    }
+  }
+  .container {
+    margin: 0;
+    @include media('≥tablet') {
+      margin: 0 auto;
+    }
+  }
 }
 
-	&__slider-item {
-	
-	
-	}
+.previous-active {
+  height: 215px !important;
+  width: 108px !important;
 
-}
-.first {
-	width: 200px; 
-  height: 360px; 
-  overflow: hidden; 
-	img{
-	  width: 600px; 
-  height: 400px; 
-  margin-left: -200px; 
-  margin-top: -20px;
-	}
-
+  @include media('≥tablet') {
+    height: 400px !important;
+    width: 200px !important;
+  }
 }
 
-.second {
+.owl-item.center.active + .owl-item {
+  height: 215px !important;
+  width: 108px !important;
 
+  @include media('≥tablet') {
+    height: 400px !important;
+    width: 200px !important;
+  }
+}
+.owl-item.center.active + .owl-item + .owl-item {
+  height: 215px !important;
+  width: 108px !important;
+
+  @include media('≥tablet') {
+    height: 360px !important;
+    width: 200px !important;
+  }
+}
+.previous-previous {
+  height: 215px !important;
+  width: 108px !important;
+
+  @include media('≥tablet') {
+    height: 360px !important;
+    width: 200px !important;
+  }
 }
 
-.third {}
+.owl-item.center.active {
+  height: 235px !important;
+  width: 320px !important;
 
-.fifth {}
+  img {
+    filter: grayscale(0%);
+  }
 
+  @include media('≥tablet') {
+    height: 440px !important;
+    width: 600px !important;
+  }
+}
+.item {
+  height: 100%;
+  width: 100%;
+}
 
-.fourth {}
+.owl-carousel .owl-item img {
+  filter: grayscale(100%);
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

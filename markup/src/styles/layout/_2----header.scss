@@ -3,23 +3,27 @@
 // -----------------------------------------------------------------------------
 [id='header'] {
   position: relative;
-  background: rgba(255, 255, 255, 1);
+  background: #ffffff;
   padding: 25px 15px 10px 15px;
   z-index: 2;
+  font-weight: 500;
 
   @include media('≥phone') {
     padding: 25px 20px;
   }
 }
-
+.wrapper-container {
+  margin: 0 auto;
+  max-width: 1488px;
+}
 .header-holder {
   display: flex;
   align-items: center;
   gap: 14px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 
-  @include media('≥phone') {
+  @include media('≥widescreen') {
     gap: 50px;
   }
 }
@@ -32,9 +36,6 @@
   @include media('≥phone') {
     width: 177.9px;
     margin-right: 20px;
-  }
-
-  img {
   }
 }
 
@@ -136,8 +137,8 @@
 
 .nav-opener {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 22px;
   font-size: 0;
   line-height: 0;
   display: block;
@@ -152,9 +153,9 @@
     @include animate(transform opacity);
     background: $black;
     position: absolute;
-    top: 22%;
-    left: -1%;
-    right: -22%;
+    top: 50%;
+    left: 0%;
+    right: 0%;
     height: 3px;
     transform: translateY(-50%);
   }
@@ -165,11 +166,11 @@
   }
 
   &:before {
-    transform: translateY(-9px);
+    top: 0;
   }
 
   &:after {
-    transform: translateY(6px);
+    top: 100%;
   }
 
   &:hover {
@@ -187,11 +188,14 @@
     }
 
     &:before {
-      transform: rotate(45deg) translateY(0);
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
     }
 
     &:after {
-      transform: rotate(-45deg) translateY(0);
+      top: 50%;
+
+      transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
@@ -221,37 +225,29 @@
     0 var(--size-skew)
   );
   transition: background-color 0.3s ease;
-  font-family: 'Mulish-ExtraBold';
+  font-family: $base-font-1;
   transition: color 0.2s ease;
   box-sizing: border-box;
+  font-weight: 800;
   max-width: 180px;
   min-height: 50px;
   font-size: 16px;
-
-  @include media('≥widescreen') {
-
-  }
 }
 
 .header-holder__btn {
-  //phone
   width: 100%;
   max-width: 149px;
   padding: 0 0 0 0;
   min-height: 43px;
-  margin: -16px 0 0 0;
+  // margin: -16px 0 0 0;
   font-size: 14px;
 
-  @include media('≥phone') {
+  @include media('≥widescreen') {
     margin: 0 0 0 0;
     max-width: 255px;
     min-height: 64px;
     font-size: 20px;
   }
-}
-
-.primary-menu {
-  font-family: 'Montserrat-Medium';
 }
 
 .btn::before {
@@ -284,9 +280,9 @@
   color: rgb(255, 255, 255);
 }
 
-input {
-  display: none;
-}
+// input {
+//   display: none;
+// }
 
 .drop-holld {
   opacity: 0;

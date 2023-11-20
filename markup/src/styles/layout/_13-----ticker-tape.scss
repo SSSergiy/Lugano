@@ -6,7 +6,6 @@
     z-index: 2;
     height: 124px;
     background-color: #ff7701;
-		// animation: ticker-move 10s linear infinite; 
   }
 
   &__red-item {
@@ -35,9 +34,10 @@
       span {
         color: #ffffff;
         padding-bottom: 17px;
-        line-height: 26.907px;
-        font-family: 'Mulish-Black';
-        font-size: 30.4px;
+        line-height: 27px;
+        font-family: $base-font-1;
+        font-weight: 900;
+        font-size: 30px;
       }
     }
 
@@ -54,14 +54,14 @@
 
     em {
       color: #161616;
-      font-family: 'Mulish-ExtraBold';
-      font-size: 30.452px;
+      font-family: $base-font-1;
+      font-weight: 900;
+      font-size: 30px;
       line-height: 120%;
-      /* 36.543px */
     }
   }
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////
+ 
   &__black-block {
     position: relative;
     z-index: 1;
@@ -95,9 +95,10 @@
       span {
         color: #ffffff;
         padding-bottom: 17px;
-        line-height: 26.907px;
-        font-family: 'Mulish-Black';
-        font-size: 30.4px;
+        line-height: 27px;
+        font-family: $base-font-1;
+        font-weight: 900;
+        font-size: 30px;
       }
     }
 
@@ -114,10 +115,10 @@
 
     em {
       color: #ffffff;
-      font-family: 'Mulish-ExtraBold';
-      font-size: 30.452px;
+      font-family: $base-font-1;
+      font-weight: 800;
+      font-size: 30px;
       line-height: 120%;
-      /* 36.543px */
     }
   }
 }

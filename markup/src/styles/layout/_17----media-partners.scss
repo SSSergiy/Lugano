@@ -1,8 +1,8 @@
 .media-partners {
   margin-bottom: 80px;
   display: grid;
-  grid-template-columns: 249px 249px 249px 249px 249px; //--------------width
-  grid-template-rows: 160px 160px; //--------------height
+  grid-template-columns: 249px 249px 249px 249px 249px;
+  grid-template-rows: 160px 160px;
   grid-template-areas:
     'title title title p4 p5'
     'w1    w2 w3 w4 w5'
@@ -25,13 +25,14 @@
     background-repeat: no-repeat;
     background-size: auto;
 
-
   }
+
   &__title {
     grid-area: title;
     line-height: 120%;
     font-size: 50px;
-    font-family: 'Mulish-Black';
+    font-family: $base-font-1;
+    font-weight: 900;
     justify-self: start;
   }
 }

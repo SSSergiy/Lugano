@@ -1,18 +1,15 @@
 .latest-articles {
   margin-bottom: 80px;
   display: grid;
-  grid-template-columns: 1fr 20px 1fr; //--------------width
-  grid-template-rows: 123px 190px 20px 190px 124px; //--------------height
+  grid-template-columns: 1fr 20px 1fr; 
+  grid-template-rows: 123px 190px 20px 190px 124px;
   grid-template-areas:
     'title         title   title'
     'article1      w2      article2'
     'l1            l2      l3'
     'article3      k2      article4'
     'ppb           ppb     ppb';
-
-  // align-items: center;
-  // justify-items: center;
-
+  
   &__article1 {
     grid-area: article1;
   }
@@ -54,26 +51,25 @@
     grid-column: 2 / 3;
     color: #727981;
     font-size: 16px;
-    font-family: 'Montserrat-Regular';
   }
 
   &__figure-p {
     grid-column: 2 / 3;
     font-size: 16px;
     color: #161616;
-    font-family: 'Montserrat-Regular';
   }
 
   &__figure-figcaption {
     grid-column: 2 / 3;
     font-size: 18px;
-    font-family: 'Montserrat-SemiBold';
+    font-weight: 600;
   }
 
   &__title {
     grid-area: title;
     font-size: 50px;
-    font-family: 'Mulish-Black';
+    font-family: $base-font-1;
+    font-weight: 900;
     text-transform: uppercase;
   }
 
@@ -90,6 +86,6 @@
   &__link {
     color: #ff7701;
     font-size: 16px;
-    font-family: 'Montserrat-Bold';
+    font-weight: 700;
   }
 }

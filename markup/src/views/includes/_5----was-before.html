@@ -1,86 +1,83 @@
 <section class="was-before">
-  <h2 class="was-before__title container">AS it was <strong>Before</strong></h2>
-  <ul class="was-before__slider-block"  role="list">
-    <li class="was-before__slider-item first"  role="listitem">
-      <img
-        src="/images/was-before/was-wey-893-596/was-wey-893-596.jpg"
-        alt="BUSINESS FORUM"
-        srcset="
-          /images/was-before/was-wey-893-596/was-wey-893-596-45.jpg  640w,
-          /images/was-before/was-wey-893-596/was-wey-893-596-30.jpg  920w,
-          /images/was-before/was-wey-893-596/was-wey-893-596-15.jpg 1220w,
-          /images/was-before/was-wey-893-596/was-wey-893-596.jpg    1920w
-        "
-        sizes="	(max-width: 640px) 640w,
-    (max-width: 920px) 920w,
-    (max-width: 1220px) 1220w,
-    1920w"
-      />
-    </li>
-    <li class="was-before__slider-item second" role="listitem">
-      <img
-        src="/images/was-before/was-show-men-660-440/was-show-men-660-440.jpg"
-        alt="BUSINESS FORUM"
-        srcset="
-          /images/was-before/was-show-men-660-440/was-show-men-660-440-45.jpg  640w,
-          /images/was-before/was-show-men-660-440/was-show-men-660-440-30.jpg  920w,
-          /images/was-before/was-show-men-660-440/was-show-men-660-440-15.jpg 1220w,
-          /images/was-before/was-show-men-660-440/was-show-men-660-440.jpg    1920w
-        "
-        sizes="	(max-width: 640px) 640w,
-          (max-width: 920px) 920w,
-          (max-width: 1220px) 1220w,
-          1920w"
-      />
-    </li>
-    <li class="was-before__slider-item third" role="listitem">
-      <img
-        src="/images/was-before/was-show-661-440/was-show-661-440.jpg"
-        alt="BUSINESS FORUM"
-        srcset="
-          /images/was-before/was-show-661-440/was-show-661-440-45.jpg  640w,
-          /images/was-before/was-show-661-440/was-show-661-440-30.jpg  920w,
-          /images/was-before/was-show-661-440/was-show-661-440-15.jpg 1220w,
-          /images/was-before/was-show-661-440/was-show-661-440.jpg    1920w
-        "
-        sizes="	(max-width: 640px) 640w,
-    (max-width: 920px) 920w,
-    (max-width: 1220px) 1220w,
-    1920w"
-      />
-    </li>
-    <li class="was-before__slider-item fourth" role="listitem">
-      <img
-        src="/images/was-before/was-podium-1114-743/was-podium-1114-743.jpg"
-        alt="11BUSINESS FORUM"
-        srcset="
-          /images/was-before/was-podium-1114-743/was-podium-1114-743-45.jpg  640w,
-          /images/was-before/was-podium-1114-743/was-podium-1114-743-30.jpg  920w,
-          /images/was-before/was-podium-1114-743/was-podium-1114-743-15.jpg 1220w,
-          /images/was-before/was-podium-1114-743/was-podium-1114-743.jpg    1920w
-        "
-        sizes="	(max-width: 640px) 640w,
-    (max-width: 920px) 920w,
-    (max-width: 1220px) 1220w,
-    1920w"
-      />
-    </li>
-    <li class="was-before__slider-item fifth" role="listitem">
-      <img
-        src="/images/was-before/was-mean-599-400/was-mean-599-400.jpg"
-        alt="BUSINESS FORUM"
-        srcset="
-          /images/was-before/was-mean-599-400/was-mean-599-400-45.jpg  640w,
-          /images/was-before/was-mean-599-400/was-mean-599-400-30.jpg  920w,
-          /images/was-before/was-mean-599-400/was-mean-599-400-15.jpg 1220w,
-          /images/was-before/was-mean-599-400/was-mean-599-400.jpg    1920w
-        "
-        sizes="	(max-width: 640px) 640w,
-      (max-width: 920px) 920w,
-      (max-width: 1220px) 1220w,
-      (max-width: 1220px) 
-      1920w"
-      />
-    </li>
-  </ul>
+
+  <div class="container">
+    <h2 class="was-before__title">AS it was <span>Before</span></h2>
+  </div>
+
+  <div class="owl-wrapp">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="images/was-before/was-men.jpg" alt="Business Forum" />
+      </div>
+
+      <div class="item">
+        <img src="images/was-before/wemen.jpg" alt="Business Forum" />
+      </div>
+
+      <div class="item">
+        <img src="images/was-before/meeteng.jpg" alt="11Business Forum" />
+      </div>
+
+
+      <div class="item">
+        <img src="images/was-before/places.jpg" alt="Business Forum" />
+      </div>
+
+      <div class="item">
+        <img src="images/was-before/meeteng-mean.jpg" alt="Business Forum" />
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+<script>
+  $(document).ready(function () {
+    var owl = $('.owl-carousel')
+    owl.on('changed.owl.carousel', function (event) {
+      var current = event.item.index
+      var prev = $(event.target).find(".owl-item").eq(current - 1)
+
+      $(".owl-item").removeClass("previous-active")
+      prev.addClass("previous-active")
+    })
+
+    owl.on('changed.owl.carousel', function (event) {
+      var current = event.item.index
+      var prev = $(event.target).find(".owl-item").eq(current - 2)
+
+      $(".owl-item").removeClass("previous-previous")
+      prev.addClass("previous-previous")
+    })
+    owl.owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      // autoplay: true,
+      // autoplaySpeed: 10,
+      // smartSpeed: 700,
+      // autoplayTimeout: 4000,
+      responsive: {
+        0: { items: 1 },
+        370: { items: 1 },
+        600: { items: 1 },
+        960: { items: 4 },
+        1200: { items: 5 }
+      },
+      center: true,
+    })
+
+    owl.on('mousewheel', '.owl-stage', function (e) {
+      if (e.originalEvent.deltaY > 0) {
+        owl.trigger('next.owl')
+      } else {
+        owl.trigger('prev.owl')
+      }
+      e.preventDefault()
+    })
+
+
+
+  });
+</script>

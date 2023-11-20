@@ -1,52 +1,78 @@
 .organizers {
-  margin-bottom: 70px;
-  display: grid;
-  grid-template-columns: 1fr 400px 300px;
-  grid-template-rows: 100px 84px 148px;
-  grid-template-areas:
-    'title gg1 gg2'
-    'title ark1 ark2'
-    'gg3 ark3 ark4';
-  align-items: center;
-  justify-items: center;
+  .container {
+    padding-top: 8px;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 40% 25% 25%;
+    grid-template-rows: 96px 79px 207px;
+    grid-template-areas:
+      'title gg1 gg2'
+      'title ark1 ark2'
+      'gg3 ark3 ark4';
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+
+    @include media('≥widescreen') {
+      grid-template-columns: 50% 25% 25%;
+
+      gap: 0px;
+    }
+  }
 
   &__hgroup {
     grid-area: title;
     display: flex;
     flex-direction: column;
     gap: 40px;
-
+    padding: 5px;
+    @include media('≥widescreen') {
+      padding: 0;
+    }
   }
 
   &__hgroup-h {
     line-height: 120%;
     text-transform: uppercase;
     font-size: 50px;
-    font-family: 'Mulish-Black';
+    font-family: $base-font-1;
+    font-weight: 900;
   }
 
   &__hgroup-p {
     font-size: 20px;
-    font-family: 'Montserrat-Regular';
-    /* Додайте будь-які конкретні стилі для p, якщо потрібно */
+    line-height: 29px;
   }
 
   &__article1 {
     grid-area: ark1;
+    padding: 5px;
+    @include media('≥widescreen') {
+      padding: 0;
+    }
   }
 
   &__article2 {
     grid-area: ark2;
+    padding: 5px;
+    @include media('≥widescreen') {
+      padding: 0;
+    }
   }
 
   &__article3 {
     grid-area: ark3;
+    padding: 5px;
+    @include media('≥widescreen') {
+      padding: 0;
+    }
   }
 
   &__article4 {
     grid-area: ark4;
+    padding: 5px;
+    @include media('≥widescreen') {
+      padding: 0;
+    }
   }
-
-
-
 }

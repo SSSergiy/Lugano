@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   &__hgroup {
     display: grid;
     grid-template-columns: 402 586px;
@@ -15,13 +16,17 @@
       ' ark1 ark2';
     align-items: center;
     justify-items: center;
-    h2 {position: relative;
+
+    h2 {
+      position: relative;
       grid-area: title;
       color: #ffffff;
       font-size: 120px;
-      font-family: 'Mulish-Black';
+      font-family: $base-font-1;
+      font-weight: 900;
       text-transform: uppercase;
     }
+
     p {
       grid-area: ark2;
       width: 586px;
@@ -29,19 +34,22 @@
       background-color: #ff7701;
       -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
       clip-path: polygon(0% 0%, 100% 0, 100% 100%, 92% 65%, 0 65%);
-      font-family: 'Mulish-Black';
+      font-family: $base-font-1;
+      font-weight: 900;
       font-size: 100px;
       text-transform: uppercase;
       color: #ffffff;
       padding-right: 40px;
       padding-left: 40px;
       text-align: center;
+
       mark {
         text-transform: uppercase;
         background-color: transparent;
         color: #ffffff;
       }
     }
+
     strong {
       grid-area: ark2;
       font-size: 50px;
@@ -53,6 +61,7 @@
     }
   }
 }
+
 .see-at-lugano::before {
   content: "";
   position: absolute;
@@ -60,6 +69,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); 
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }

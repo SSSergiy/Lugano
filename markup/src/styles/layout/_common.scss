@@ -18,11 +18,31 @@ main {
   width: 100%;
   max-width: $max-width-center-container;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 
   @include media('≥phone') {
     padding: $padding-container;
   }
+}
+a[href*='mailto:'] {
+  word-wrap: break-word;
+}
+
+.js-tab-hidden {
+  display: block !important;
+  left: -9999px !important;
+  position: absolute !important;
+  top: -9999px !important;
+}
+
+.viewport-section {
+  background: #ccc;
+  height: 450px;
+  margin: 10px 0;
+}
+
+.viewport-section.in-viewport {
+  background: #0f0;
 }
 // $maxWidth: 1920;
 // $maxWidthContainer: 1248;
