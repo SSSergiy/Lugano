@@ -17,7 +17,7 @@
     object-position: 50% 50%;
     top: 0;
     left: 0;
-    filter: grayscale(40%) blur(5px);
+    filter: grayscale(100%);
   }
   .container {
     padding-top: 30px;
@@ -179,16 +179,30 @@
     @include media('≥desktop') {
       width: 50%;
     }
+
+    &::before {
+      position: absolute;
+      top: -33px;
+      right: 33px;
+      content: '';
+      width: 0px;
+      height: 33px;
+      border-style: solid;
+      border-width: 0px 8px 33px 313px;
+      border-color: transparent transparent #ff7701 transparent;
+      transform: rotate(0deg);
+    }
+
     h2 {
       justify-content: center;
       width: 100%;
       display: flex;
       align-items: center;
+      flex-direction: row;
       &.block-standart__title {
         flex-direction: column;
         padding: 13px 64px 9px 68px;
       }
-      flex-direction: row;
 
       @include media('≥tablet') {
         flex-direction: column;
@@ -238,6 +252,10 @@
 
       @include media('≥widescreen') {
         min-width: 310px;
+      }
+      &:hover {
+        background-color: #ffffff;
+        color: #ff7701;
       }
     }
   }

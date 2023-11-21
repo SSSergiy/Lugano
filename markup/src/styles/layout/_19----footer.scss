@@ -14,7 +14,6 @@
 
   @include media('≥tablet') {
     padding-top: 60px;
-    // padding-bottom: 40px;
   }
 
   .join-our__form {
@@ -184,8 +183,14 @@
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
-  gap: 19px;
+  column-gap: 16px;
+
+  @include media('≥tablet') {
+    gap: 19px;
+  }
+
   li {
+    column-gap: 16px;
     width: 38px;
     @include media('≥desktop') {
       width: 49px;

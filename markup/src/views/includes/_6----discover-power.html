@@ -27,17 +27,29 @@
       strategic partnerships that will drive economic growth and
       innovation on a global scale.
     </p>
-    <button class="discover-power__btn btn">WATCH THE RECORDING</button>
+    <a class="discover-power__btn btn" href="https://www.youtube.com/watch?v=HPkJ6tnhkMo&ab_channel=LuganoBusinessForum"
+      target="_blank">WATCH THE RECORDING</a>
     <img class="discover-power__arrow-img  " decoding="async" src="images/discover-power/arrow.svg" alt="Get ticket" />
   </div>
 </section>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var dataElements = document.querySelectorAll('.discover-power__info-list data')
-    dataElements.forEach(function (element) {
-      var endValue = parseInt(element.getAttribute('value'))
-      animateCount(element, 0, endValue, 2000)
-    })
+    function animateIfVisible() {
+      dataElements.forEach(function (element) {
+        var boundingRect = element.getBoundingClientRect()
+        if (
+          boundingRect.top >= 0 &&
+          boundingRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          !element.hasAttribute('data-animated')
+        ) {
+          var endValue = parseInt(element.getAttribute('value'))
+          animateCount(element, 0, endValue, 2000)
+          element.setAttribute('data-animated', 'true')
+        }
+      })
+    }
+
     function animateCount(element, start, end, duration) {
       var startTime = new Date().getTime()
       var endTime = startTime + duration
@@ -51,8 +63,9 @@
           requestAnimationFrame(update)
         }
       }
-
       update()
     }
+    animateIfVisible()
+    window.addEventListener('scroll', animateIfVisible)
   });
 </script>

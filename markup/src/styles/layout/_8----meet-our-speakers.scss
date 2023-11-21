@@ -75,9 +75,10 @@
     }
   }
   &.in-viewport {
+    // na skrole
     .coll {
-      opacity: 1;
-      transform: translate(0);
+      opacity: 1; // po;vlenie
+      transform: translate(0); //dvigaet z nizu v goru
     }
   }
   &__article {
@@ -200,4 +201,9 @@
     height: 100%;
     object-position: 50% 50%;
   }
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
 }

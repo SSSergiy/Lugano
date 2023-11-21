@@ -1,7 +1,7 @@
 .see-at-lugano {
   position: relative;
   min-height: 390px;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
 
   @include media('≥widescreen') {
     min-height: 450px;
-    margin-bottom: 43px;
+    margin-bottom: 94px;
   }
 
   .container {
@@ -36,6 +36,7 @@
     object-position: 50% 50%;
     top: 0;
     left: 0;
+    filter: grayscale(100%) brightness(0.7) blur(1px);
   }
   &__hgroup {
     display: grid;
