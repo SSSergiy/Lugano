@@ -4,8 +4,6 @@
     margin-bottom: 80px;
   }
 
-  .container {
-  }
   &__article {
     display: flex;
     justify-content: center;
@@ -189,6 +187,27 @@
       &:before {
         display: block;
       }
+    }
+  }
+
+  li {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all $animation-speed;
+    &:nth-child(even) {
+      transform: translateX(30px) translateY(30px);
+      transition-delay: 1s;
+    }
+    &:nth-child(odd) {
+      transform: translateY(30px) translateX(30px);
+      transition-delay: 1.5s;
+    }
+  }
+
+  &.in-viewport {
+    li {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }

@@ -13,6 +13,7 @@
   time {
     text-transform: uppercase;
   }
+
   img {
     width: 100%;
   }
@@ -29,22 +30,24 @@
     opacity: 0;
 
     transform: translateY(30px);
-
     transition: all 0.3s $animation-speed;
 
     @include media('≥tablet') {
       font-size: 48px;
       padding: 10px;
     }
+
     @include media('≥desktop') {
       font-size: 60px;
       padding: 10px;
     }
+
     @include media('≥widescreen') {
       margin: -14px 61px 0 0;
       padding: 24px 34px 19px 34px;
       font-size: 80px;
     }
+
     .loaded & {
       opacity: 1;
       transform: translate(0);
@@ -64,6 +67,7 @@
       @include media('≥tablet') {
         border-width: 0 70px 80px 0;
       }
+
       @include media('≥desktop') {
         border-width: 0 95px 103px 0;
       }
@@ -96,6 +100,7 @@
       max-width: 400px;
       font-size: 26px;
     }
+
     @include media('≥desktop') {
       padding: 9px 52px 10px 47px;
       max-width: 772px;
@@ -158,6 +163,7 @@
     @include media('≥widescreen') {
       margin: 0 61px 102px auto;
     }
+
     .loaded & {
       opacity: 1;
       transform: translate(0);
@@ -173,14 +179,17 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all $animation-speed 1.3s;
+
     .loaded & {
       opacity: 1;
       transform: translate(0);
     }
+
     &.btn {
       background-color: #ff7701;
       color: #ffffff;
     }
+
     &:hover {
       background-color: #ffffff;
       color: #ff7701;
@@ -199,6 +208,7 @@
   top: 0;
   left: 0;
 }
+
 .lugano-busines-forum__btn.btn {
   padding: 0 0 0 0;
   min-width: 169px;
@@ -207,6 +217,7 @@
   opacity: 1;
   transform: translateY(0);
   transition: all 0s;
+
   &:hover {
     background-color: #ffffff;
     color: #ff7701;
@@ -218,6 +229,7 @@
     font-size: 20px;
   }
 }
+
 .lugano-busines-forum__main {
   position: relative;
   text-align: center;
@@ -227,6 +239,7 @@
     text-align: start;
   }
 }
+
 .lugano-busines-forum__info-place {
   text-transform: uppercase;
 }

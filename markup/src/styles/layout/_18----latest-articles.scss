@@ -1,5 +1,3 @@
-.container {
-}
 .btn-latest {
   width: 100%;
   text-align: center;
@@ -39,6 +37,22 @@
       margin-bottom: 60px;
     }
   }
+}
+.latest-articles__article {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.latest-articles__article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.288);
+}
+.latest-articles__link {
+  transition: color 0.3s ease;
+}
+
+.latest-articles__link:hover {
+  color: #007bff;
 }
 
 .latest-articles {

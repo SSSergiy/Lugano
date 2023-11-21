@@ -19,6 +19,9 @@
     line-height: 100%;
     text-transform: uppercase;
     margin: 0 0 30px 0;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 
     @include media('≥tablet') {
       margin: 0 0 44px 0;
@@ -167,13 +170,27 @@
     margin-bottom: 22px;
     line-height: 21px;
     font-weight: 400;
+
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity $animation-speed, transform $animation-speed;
+
     @include media('≥tablet') {
       padding: 0 0 0 0;
-
       font-size: 20px;
       line-height: 26px;
     }
+
+    &:nth-of-type(2) {
+      transform: translateX(60px);
+      transition-delay: 0.5s;
+    }
+    &:nth-of-type(3) {
+      transform: translateX(-60px);
+      transition-delay: 1s;
+    }
   }
+
   p:last-child {
     margin-bottom: 40px;
   }
@@ -201,10 +218,8 @@
     @include media('≥phone') {
       padding: 15px 29px 15px 29px;
       margin: 0 auto 60px;
-
       max-width: 310px;
       line-height: 22px;
-
       font-size: 20px;
       min-height: 64px;
     }
@@ -225,6 +240,14 @@
 
     @include media('≥desktop') {
       display: block;
+    }
+  }
+
+  &.in-viewport {
+    .discover-power__title,
+    p {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }

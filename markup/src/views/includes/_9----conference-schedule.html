@@ -1,6 +1,4 @@
-<section class="conference-schedule">
-
-
+<section class="conference-schedule viewport-section">
   <div class="container">
     <h2 class="conference-schedule__title">Conference schedule</h2>
 
@@ -14,7 +12,6 @@
     </p>
 
     <div class="tab-content">
-
       <table id="tab1-0" class="conference-schedule__table-block">
         <tbody>
           <tr class="conference-schedule__table-column">
@@ -25,8 +22,7 @@
               <strong>Registration</strong>
               <p>Session | 2 hours</p>
             </td>
-            <td class="conference-schedule__table-column-status">
-            </td>
+            <td class="conference-schedule__table-column-status"></td>
             <td class="conference-schedule__table-column-participants"></td>
           </tr>
           <tr class="conference-schedule__table-column">
@@ -100,7 +96,8 @@
               <p>
                 Panel: <strong> Ukraine from inside and outside</strong>: actual
                 view of Ukrainian economy in war situation and outlook for the
-                future. <strong> Actual view of Ukrainian economy in war</strong>:
+                future.
+                <strong> Actual view of Ukrainian economy in war</strong>:
                 current situation with economy and business.
               </p>
               <span>Session | 2 hours</span>
@@ -143,8 +140,7 @@
               <strong>Registration</strong>
               <p>Session | 2 hours</p>
             </td>
-            <td class="conference-schedule__table-column-status">
-            </td>
+            <td class="conference-schedule__table-column-status"></td>
             <td class="conference-schedule__table-column-participants"></td>
           </tr>
           <tr class="conference-schedule__table-column">
@@ -200,7 +196,8 @@
               <p>
                 Panel: <strong> Ukraine from inside and outside</strong>: actual
                 view of Ukrainian economy in war situation and outlook for the
-                future. <strong> Actual view of Ukrainian economy in war</strong>:
+                future.
+                <strong> Actual view of Ukrainian economy in war</strong>:
                 current situation with economy and business.
               </p>
               <span>Session | 2 hours</span>
@@ -240,8 +237,7 @@
             </td>
             <td class="conference-schedule__mobile-column-action">
               <section class="registration-mobile">
-                <h4>Official opening.
-                  Welcome words</h4>
+                <h4>Official opening. Welcome words</h4>
                 <p>Session | 20 minutes</p>
               </section>
               <section class="status-mobile">
@@ -288,10 +284,12 @@
             </td>
             <td class="conference-schedule__mobile-column-action">
               <section class="registration-mobile">
-                <h4>Panel: Ukraine from inside and outside: actual view of Ukrainian economy in war situation and
-                  outlook
-                  for the future.
-                  Actual view of Ukrainian economy in war: current situation with economy and business.</h4>
+                <h4>
+                  Panel: Ukraine from inside and outside: actual view of
+                  Ukrainian economy in war situation and outlook for the future.
+                  Actual view of Ukrainian economy in war: current situation
+                  with economy and business.
+                </h4>
                 <p>Session | 2 hours</p>
               </section>
               <section class="status-mobile">
@@ -330,8 +328,7 @@
             </td>
             <td class="conference-schedule__mobile-column-action">
               <section class="registration-mobile">
-                <h4>Official opening.
-                  Welcome words</h4>
+                <h4>Official opening. Welcome words</h4>
                 <p>Session | 40 minutes</p>
               </section>
               <section class="status-mobile">
@@ -387,10 +384,12 @@
             </td>
             <td class="conference-schedule__mobile-column-action">
               <section class="registration-mobile">
-                <h4>Panel: Ukraine from inside and outside: actual view of Ukrainian economy in war situation and
-                  outlook
-                  for the future.
-                  Actual view of Ukrainian economy in war: current situation with economy and business.</h4>
+                <h4>
+                  Panel: Ukraine from inside and outside: actual view of
+                  Ukrainian economy in war situation and outlook for the future.
+                  Actual view of Ukrainian economy in war: current situation
+                  with economy and business.
+                </h4>
                 <p>Session | 2 hours</p>
               </section>
               <section class="status-mobile">
@@ -424,16 +423,16 @@
 
 <script>
   $(document).ready(function () {
-    $(".tabs-link").click(function () {
-      $(".tabs-link").removeClass("active")
-      $(this).addClass("active")
+    $('.tabs-link').click(function () {
+      $('.tabs-link').removeClass('active')
+      $(this).addClass('active')
       $(this).css({
-        "color": "#ffffff",
-        "background-color": "#ff7701"
+        color: '#ffffff',
+        'background-color': '#ff7701'
       })
-      $(".tabs-link:not(.active)").css({
-        "color": "#161616",
-        "background": "#ffffff"
+      $('.tabs-link:not(.active)').css({
+        color: '#161616',
+        background: '#ffffff'
       })
       return false
     })

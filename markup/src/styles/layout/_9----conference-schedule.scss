@@ -13,7 +13,9 @@ figcaption {
   @include media('≥tablet') {
     margin-bottom: 75px;
   }
+
   color: #161616;
+
   &__title {
     line-height: 36px;
     font-size: 36px;
@@ -21,6 +23,9 @@ figcaption {
     font-family: $base-font-1;
     margin-bottom: 25px;
     text-transform: uppercase;
+    opacity: 0;
+    transform: translateX(230px);
+    transition: all $animation-speed;
 
     @include media('≥tablet') {
       margin-bottom: 53px;
@@ -28,6 +33,7 @@ figcaption {
       line-height: 50px;
     }
   }
+
   &__subtitle {
     border-radius: 2px;
     border: 1px solid #ff7701;
@@ -42,7 +48,6 @@ figcaption {
     @include media('≥tablet') {
       margin-bottom: 15px;
       min-height: 76px;
-
       font-size: 30px;
     }
 
@@ -55,16 +60,29 @@ figcaption {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all $animation-speed;
+
       @include media('≥tablet') {
         padding: 20px 0 20px 0;
-
         font-size: 30px;
       }
+
+      &:nth-of-type(1) {
+        transform: translateX(-160px);
+      }
+      &:nth-of-type(2) {
+        transform: translateX(160px);
+      }
     }
+
     a:first-child {
       color: #ffffff;
       background-color: #ff7701;
     }
+
     a:nth-child(2) {
       background: #ffffff;
       color: #161616;
@@ -78,23 +96,42 @@ figcaption {
     border: 1px solid #cbcbcb;
     background: #fff;
     border-top: none;
+
     tbody {
       display: flex;
       flex-direction: column;
       width: 100%;
+
       tr:nth-child(4) {
         td ~ td {
           p {
             font-weight: 700;
+
             strong {
               font-weight: 700;
             }
           }
+
           p ~ span {
             font-size: 18px;
             font-weight: 400;
             color: #8b8b8b;
           }
+        }
+      }
+
+      tr {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity $animation-speed, transform $animation-speed;
+        &:nth-of-type(2) {
+          transition-delay: 1s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: 1.5s;
+        }
+        &:nth-of-type(4) {
+          transition-delay: 2s;
         }
       }
     }
@@ -107,12 +144,14 @@ figcaption {
     padding: 9px 31px;
     display: flex;
     align-items: center;
+    opacity: 0;
 
     span {
       font-size: 18px;
       font-weight: 700;
     }
   }
+
   &__table-column-action {
     max-width: 414px;
     width: 100%;
@@ -122,27 +161,32 @@ figcaption {
       color: #8b8b8b;
       font-weight: 700;
     }
+
     p {
       color: #8b8b8b;
       font-size: 18px;
       font-weight: 500;
+
       strong {
         font-weight: normal;
       }
     }
   }
+
   &__table-column-status {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 265px;
     padding: 0 20px;
+
     .triangle {
       position: relative;
       font-size: 18px;
       font-weight: 700;
       color: #161616;
     }
+
     .triangle::before {
       content: '';
       position: absolute;
@@ -156,10 +200,12 @@ figcaption {
       border-left: 12px solid #ff7701;
     }
   }
+
   &__table-column-participants {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+
     article {
       min-width: 41px;
     }
@@ -167,6 +213,7 @@ figcaption {
     img {
       border-radius: 50%;
     }
+
     figure {
       height: 100%;
       padding: 0 0 0 0;
@@ -174,16 +221,19 @@ figcaption {
       display: flex;
       justify-content: center;
       gap: 10px;
+
       dl {
         height: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
+
         dt {
           color: #8b8b8b;
           font-size: 16px;
           font-weight: 700;
         }
+
         dd {
           color: #8b8b8b;
           font-size: 16px;
@@ -192,17 +242,11 @@ figcaption {
       }
     }
   }
+
   &__table-column-time {
     display: flex;
     height: 100%;
     min-width: 160px;
-  }
-
-  .container {
-  }
-  .last {
-  }
-  .second {
   }
 
   .btn {
@@ -216,6 +260,7 @@ figcaption {
     padding: 13px 15px 13px 15px;
     margin: 0 auto;
     min-height: 40px;
+
     @include media('≥tablet') {
       padding: 20px 15px 20px 15px;
 
@@ -227,6 +272,7 @@ figcaption {
       color: #ffffff;
     }
   }
+
   time {
     font-size: 30px;
     font-weight: 900;
@@ -238,8 +284,17 @@ figcaption {
     @include media('≥tablet') {
       padding: 28px;
     }
+  } //ppp
+  &.in-viewport {
+    .conference-schedule__title,
+    .tabs-link,
+    tr {
+      opacity: 1;
+      transform: translate(0);
+    }
   }
 }
+
 td {
   border: none;
 }
@@ -255,20 +310,6 @@ td {
 }
 
 .conference-schedule {
-  .container {
-  }
-
-  &__title {
-  }
-  &__subtitle {
-    p {
-      a {
-        data {
-        }
-      }
-    }
-  }
-
   &__table-block-mobile {
     border-radius: 2px;
     border: 1px solid #cbcbcb;
@@ -284,13 +325,13 @@ td {
 
   &__mobile-column {
     border-radius: 2px;
-
     border-top: 1px solid #cbcbcb;
     width: 100%;
   }
 
   &__mobile-column-time {
     width: 20%;
+
     time {
       font-size: 16px;
       font-weight: 900;
@@ -304,13 +345,13 @@ td {
   &__mobile-column-action {
     display: flex;
     flex-direction: column;
-
     padding-bottom: 17px;
     padding-top: 17px;
-
     width: 85%;
+
     .registration-mobile {
       margin-bottom: 13px;
+
       h4 {
         color: #8b8b8b;
         font-size: 16px;
@@ -318,16 +359,18 @@ td {
         margin-bottom: 2px;
         line-height: 18px;
       }
+
       p {
         color: #8b8b8b;
         font-size: 16px;
         line-height: 18px;
-
         font-weight: 500;
       }
     }
+
     .status-mobile {
       margin-bottom: 13px;
+
       h4 {
         right: -13px;
         position: relative;
@@ -349,18 +392,22 @@ td {
         }
       }
     }
+
     .participants-mobile {
       display: flex;
+
       figure {
         padding: 0 0 0 0;
         margin: 0 0 0 0;
         display: flex;
         gap: 5px;
+
         img {
           border-radius: 50%;
           width: 34px;
           height: 34px;
         }
+
         figcaption {
           h4 {
             font-size: 12px;
@@ -368,6 +415,7 @@ td {
             font-weight: 700;
             line-height: 14px;
           }
+
           p {
             font-weight: 500;
             font-size: 12px;
@@ -376,6 +424,7 @@ td {
           }
         }
       }
+
       article {
         img {
           border-radius: 50%;
@@ -390,22 +439,28 @@ td {
 .tab-content {
   width: 100%;
 }
+
 .desktop {
   display: none !important;
+
   @include media('≥tablet') {
     display: block !important;
     display: flex !important;
   }
 }
+
 .mobile {
   display: block !important;
   display: flex !important;
+
   @include media('≥tablet') {
     display: none !important;
   }
 }
+
 .conference-schedule__table-block-mobile {
   display: block !important;
+
   @include media('≥tablet') {
     display: none !important;
   }
@@ -413,6 +468,7 @@ td {
 
 .conference-schedule__table-block {
   display: none !important;
+
   @include media('≥tablet') {
     display: block !important;
   }

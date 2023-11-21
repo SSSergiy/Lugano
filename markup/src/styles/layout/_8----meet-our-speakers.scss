@@ -55,6 +55,7 @@
     .coll {
       width: 50%;
       padding: 0 5px 10px;
+
       opacity: 0;
       transform: translateY(30px);
       transition: all $animation-speed;
@@ -75,10 +76,9 @@
     }
   }
   &.in-viewport {
-    // na skrole
     .coll {
-      opacity: 1; // po;vlenie
-      transform: translate(0); //dvigaet z nizu v goru
+      opacity: 1;
+      transform: translate(0);
     }
   }
   &__article {
@@ -122,7 +122,6 @@
         left: 0px;
         height: 26px;
         width: 26px;
-
         border-style: solid;
         border-width: 26px 0 0 26px;
         border-color: transparent transparent transparent#FFFFFF;
@@ -136,7 +135,6 @@
 
         @include media('≥tablet') {
           line-height: 20px;
-
           font-size: 20px;
         }
       }
@@ -147,7 +145,6 @@
 
         @include media('≥tablet') {
           line-height: 14px;
-
           font-size: 14px;
         }
       }
@@ -187,13 +184,11 @@
 }
 .article-visual {
   position: relative;
-
   width: 100%;
   padding-top: 100%;
 
   img {
     position: absolute;
-
     top: 0;
     object-fit: cover;
     max-width: none;
@@ -206,4 +201,18 @@
 a {
   color: #000000;
   text-decoration: none;
+}
+
+.coll {
+  overflow: hidden;
+}
+
+.meet-our-speakers__article {
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
 }
