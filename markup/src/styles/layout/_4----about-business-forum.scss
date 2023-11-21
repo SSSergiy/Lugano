@@ -16,7 +16,6 @@
     padding: 29px 23px 41px 20px;
     margin: 0 -20px 9px;
     opacity: 0;
-    // transform: translateY(30px) translateX(30px);
     transform: translateX(60px);
     transition: all $animation-speed;
 
@@ -44,7 +43,14 @@
       right: 16%;
       width: 40.8px;
       height: 43.8px;
-
+      @include media('≥apple') {
+        top: 8.2%;
+        right: 4%;
+      }
+      @include media('≥phone') {
+        top: 26.2%;
+        right: 16%;
+      }
       @include media('≥tablet') {
         top: 7.5%;
         right: 7.5%;
@@ -62,6 +68,9 @@
       padding: 0 13px 0 0;
       margin: 0 0 33px 0;
 
+      @include media('≥phone') {
+        max-width: 481px;
+      }
       @include media('≥tablet') {
         line-height: 50px;
         font-size: 50px;
@@ -155,7 +164,6 @@
     .about-forum__images-item-first,
     .about-forum__hgroup {
       opacity: 1;
-
       transform: translate(0);
     }
   }

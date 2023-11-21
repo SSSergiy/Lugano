@@ -98,6 +98,7 @@
     object-position: 50% 50%;
     top: 0;
     left: 0;
+
     @include media('≥tablet') {
       grid-column: 1 / 1;
       grid-row: 1 / span 3;

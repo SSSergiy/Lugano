@@ -2,7 +2,59 @@ jQuery(function () {
   initMobileNav();
   initTabs();
   initInViewport(); //animate
+  initOwlCarousel();
 });
+
+function initOwlCarousel() {
+  $(document).ready(function () {
+    var owl = $('.owl-carousel');
+    owl.on('changed.owl.carousel', function (event) {
+      var current = event.item.index;
+      var prev = $(event.target)
+        .find('.owl-item')
+        .eq(current - 1);
+
+      $('.owl-item').removeClass('previous-active');
+      prev.addClass('previous-active');
+    });
+
+    owl.on('changed.owl.carousel', function (event) {
+      var current = event.item.index;
+      var prev = $(event.target)
+        .find('.owl-item')
+        .eq(current - 2);
+
+      $('.owl-item').removeClass('previous-previous');
+      prev.addClass('previous-previous');
+    });
+    owl.owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      // autoplay: true,
+      // autoplaySpeed: 10,
+      // smartSpeed: 700,
+      // autoplayTimeout: 4000,
+      responsive: {
+        0: { items: 3 },
+        370: { items: 3 },
+        600: { items: 3 },
+        960: { items: 3 },
+        1200: { items: 5 }
+      },
+      center: true
+    });
+
+    owl.on('mousewheel', '.owl-stage', function (e) {
+      if (e.originalEvent.deltaY > 0) {
+        owl.trigger('next.owl');
+      } else {
+        owl.trigger('prev.owl');
+      }
+      e.preventDefault();
+    });
+  });
+}
 
 // in view port init
 function initInViewport() {

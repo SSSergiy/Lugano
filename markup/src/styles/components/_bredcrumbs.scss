@@ -1,0 +1,27 @@
+.bredcrumbs-wrap {
+  padding: 25px 0;
+  margin-bottom: 41px;
+}
+.bredcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  line-height: 20px;
+
+  > li {
+    &:not(:first-child) {
+      &:before {
+        content: '>';
+        margin: 0 5px;
+        font-size: 16px;
+      }
+    }
+  }
+  span {
+    font-weight: 700;
+    color: #ff7701;
+  }
+}

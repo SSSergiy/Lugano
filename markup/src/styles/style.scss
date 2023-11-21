@@ -4,6 +4,7 @@
 // devices viewport width starts at:
 $breakpoints: (
   xs-phone: 320px,
+  apple: 375px,
   phone: 480px,
   samsung: 525px,
   tablet: 768px,
@@ -53,6 +54,7 @@ $media-expressions: (
 // 4. Layout-related sections
 
 @import 'layout/common';
+@import 'components/bredcrumbs';
 @import 'layout/2----header';
 @import 'layout/3----lugano-business-forum';
 @import 'layout/4----about-business-forum';

@@ -152,6 +152,7 @@
     width: 160px;
     padding: 12px 10px;
     line-height: 18px;
+    margin-bottom: 7%;
 
     @include media('≥tablet') {
       font-size: 20px;
@@ -184,6 +185,7 @@
   list-style: none;
   flex-wrap: wrap;
   column-gap: 16px;
+  max-width: 260px;
 
   @include media('≥tablet') {
     gap: 19px;
