@@ -183,7 +183,7 @@ function initOwlCarousel() {
 
 // in view port init
 function initInViewport() {
-  jQuery('.viewport-section').itemInViewport({});
+  jQuery('.viewport-section').itemInViewport({ tolerance: 1 });
 }
 
 // loaded state script
