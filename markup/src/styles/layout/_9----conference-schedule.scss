@@ -78,14 +78,13 @@ figcaption {
       }
     }
 
-    a:first-child {
-      color: #ffffff;
-      background-color: #ff7701;
-    }
-
-    a:nth-child(2) {
+    a {
       background: #ffffff;
       color: #161616;
+      &.active {
+        color: #ffffff;
+        background-color: #ff7701;
+      }
     }
   }
 
@@ -273,18 +272,20 @@ figcaption {
     }
   }
 
-  time {
-    font-size: 30px;
-    font-weight: 900;
+  b {
+    font-size: 16px;
+    font-weight: 900 !important;
     font-family: $base-font-1;
     height: 100%;
     display: flex;
     padding: 15px;
 
     @include media('≥tablet') {
+      font-size: 30px;
+      font-weight: 900 !important;
       padding: 28px;
     }
-  } //ppp
+  }
   &.in-viewport {
     .conference-schedule__title,
     .tabs-link,
@@ -332,7 +333,7 @@ td {
   &__mobile-column-time {
     width: 20%;
 
-    time {
+    s {
       font-size: 16px;
       font-weight: 900;
       font-family: $base-font-1;

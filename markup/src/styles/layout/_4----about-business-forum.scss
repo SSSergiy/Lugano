@@ -125,8 +125,7 @@
 
   &__images-item-first {
     position: relative;
-    overflow: hidden;
-    clip-path: polygon(8% 0, 100% 0, 106% 88.4%, 89% 100%, 0 100%, 8% 95%);
+    clip-path: polygon(8% 0, 100% 0%, 100% 91.4%, 89% 100%, 0% 100%, 8% 94%);
     margin: 0 -9px 0 0;
     width: 50%;
     min-height: 270px;

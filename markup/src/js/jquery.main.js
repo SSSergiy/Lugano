@@ -1,13 +1,63 @@
 jQuery(function () {
-  initMobileNav();
-  initTabs();
-  initInViewport(); //animate
   initOwlCarousel();
+  initTabs();
+  initVideoPlayerAdd();
+  initMobileNav();
+  initInViewport(); //animate
+  initDiscoverFunc();
+  initVideoPlayer();
+  initSheduleAdd();
 });
+
+function initVideoPlayerAdd() {
+  $(document).ready(function () {
+    $('.bg').click(function () {
+      $('.icon-play, .icon-microphone').toggle();
+    });
+  });
+}
+
+function initVideoPlayer() {
+  var video = document.getElementById('luganoVideo');
+  function updateVideoSource() {
+    if (window.innerWidth <= 480) {
+      video.src = 'images/video/file_example_MP4_480_1_5MG.mp4';
+    } else if (window.innerWidth <= 1280) {
+      video.src = 'images/video/file_example_MP4_640_3MG.mp4';
+    } else if (window.innerWidth <= 1920) {
+      video.src = 'images/video/file_example_MP4_1280_10MG.mp4';
+    } else {
+      video.src = 'images/video/file_example_MP4_1920_18MG.mp4';
+    }
+    video.play();
+  }
+  window.onload = updateVideoSource;
+  window.onresize = updateVideoSource;
+}
+
+function initSheduleAdd() {
+  $(document).ready(function () {
+    $('.tabs-link').click(function () {
+      $('.tabs-link').removeClass('active');
+      $(this).addClass('active');
+      $(this).css({
+        color: '#ffffff',
+        'background-color': '#ff7701'
+      });
+      $('.tabs-link:not(.active)').css({
+        color: '#161616',
+        background: '#ffffff'
+      });
+      return false;
+    });
+  });
+}
 
 function initOwlCarousel() {
   $(document).ready(function () {
     var owl = $('.owl-carousel');
+
+    // Отслеживаем смену слайда и добавляем классы для анимации
     owl.on('changed.owl.carousel', function (event) {
       var current = event.item.index;
       var prev = $(event.target)
@@ -16,25 +66,25 @@ function initOwlCarousel() {
 
       $('.owl-item').removeClass('previous-active');
       prev.addClass('previous-active');
-    });
 
-    owl.on('changed.owl.carousel', function (event) {
-      var current = event.item.index;
-      var prev = $(event.target)
+      var prevPrev = $(event.target)
         .find('.owl-item')
         .eq(current - 2);
 
       $('.owl-item').removeClass('previous-previous');
-      prev.addClass('previous-previous');
+      prevPrev.addClass('previous-previous');
     });
+
     owl.owlCarousel({
       loop: true,
       margin: 10,
       dots: false,
-      // autoplay: true,
-      // autoplaySpeed: 10,
-      // smartSpeed: 700,
-      // autoplayTimeout: 4000,
+      smartSpeed: 700,
+      items: 6,
+      mouseDrag: true,
+      mouseWheel: false,
+      animateIn: 'fadeIn',
+      animateOut: 'fadeOut',
       responsive: {
         0: { items: 3 },
         370: { items: 3 },
@@ -45,16 +95,91 @@ function initOwlCarousel() {
       center: true
     });
 
+    var isScrolling = false;
+
+    // Добавляем обработчик событий для прокрутки колесом мыши
     owl.on('mousewheel', '.owl-stage', function (e) {
-      if (e.originalEvent.deltaY > 0) {
+      e.preventDefault();
+
+      if (isScrolling) return;
+
+      isScrolling = true;
+
+      // Задержка перед следующим скроллом
+      setTimeout(function () {
+        isScrolling = false;
+      }, 800);
+
+      var delta = e.originalEvent.deltaY;
+
+      if (delta > 0) {
         owl.trigger('next.owl');
       } else {
         owl.trigger('prev.owl');
       }
-      e.preventDefault();
+    });
+
+    // Добавляем CSS-переходы для плавной анимации
+    owl.on('translate.owl.carousel', function (e) {
+      $('.owl-item').css('transition', 'transform 0.5s ease');
+    });
+
+    owl.on('translated.owl.carousel', function (e) {
+      $('.owl-item').css('transition', '');
     });
   });
 }
+
+// function initOwlCarousel() {
+//   $(document).ready(function () {
+//     var owl = $('.owl-carousel');
+//     owl.on('changed.owl.carousel', function (event) {
+//       var current = event.item.index;
+//       var prev = $(event.target)
+//         .find('.owl-item')
+//         .eq(current - 1);
+
+//       $('.owl-item').removeClass('previous-active');
+//       prev.addClass('previous-active');
+//     });
+
+//     owl.on('changed.owl.carousel', function (event) {
+//       var current = event.item.index;
+//       var prev = $(event.target)
+//         .find('.owl-item')
+//         .eq(current - 2);
+
+//       $('.owl-item').removeClass('previous-previous');
+//       prev.addClass('previous-previous');
+//     });
+//     owl.owlCarousel({
+//       loop: true,
+//       margin: 10,
+//       dots: false,
+//       // autoplay: true,
+//       // autoplaySpeed: 10,
+//       // smartSpeed: 700,
+//       // autoplayTimeout: 4000,
+//       responsive: {
+//         0: { items: 3 },
+//         370: { items: 3 },
+//         600: { items: 3 },
+//         960: { items: 3 },
+//         1200: { items: 5 }
+//       },
+//       center: true
+//     });
+
+//     owl.on('mousewheel', '.owl-stage', function (e) {
+//       if (e.originalEvent.deltaY > 0) {
+//         owl.trigger('next.owl');
+//       } else {
+//         owl.trigger('prev.owl');
+//       }
+//       e.preventDefault();
+//     });
+//   });
+// }
 
 // in view port init
 function initInViewport() {
@@ -75,7 +200,7 @@ function initInViewport() {
 function initTabs() {
   jQuery('.tabset-dotted').tabset({
     tabLinks: 'a',
-    addToParent: true
+    addTabClassToLinks: true
   });
 }
 

@@ -5,11 +5,20 @@
 }
 
 .was-before {
-  max-width: 1440px;
+  // max-width: 1488px;
+  width: 100% !important;
+  margin: 0 auto;
 
   .container {
     margin: 0 auto;
   }
+  .owl-carousel {
+    width: 100% !important;
+  }
+}
+.owl-stage-outer {
+  max-width: 1488px !important;
+  margin: 0 auto !important;
 }
 
 .owl-stage {
@@ -17,8 +26,15 @@
   align-items: center !important;
   display: flex !important;
 }
+.owl-wrapp {
+  max-width: 1488px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
 
 .was-before {
+  margin: 0 auto;
+  width: 100%;
   margin-bottom: 73px;
 
   &__title {
@@ -89,10 +105,13 @@
 }
 
 .owl-item.center.active {
+  transition: height 2s ease, min-width 2s ease;
+  transition-delay: 1s;
   height: 235px;
   min-width: 320px;
 
   img {
+    transition: filter 0.5s ease;
     filter: grayscale(0%);
   }
 
@@ -106,7 +125,6 @@
   min-height: 100%;
   min-width: 100%;
   position: relative;
-  // display: flex;
   img {
     position: absolute;
     max-width: none;

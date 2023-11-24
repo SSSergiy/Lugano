@@ -83,6 +83,12 @@
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+
+    &.block-standart {
+      &::before {
+        border-color: transparent transparent #cacaca transparent;
+      }
+    }
   }
 
   &__block-vip {
@@ -292,6 +298,9 @@
 
 .block-standart {
   z-index: 2;
+  &::before {
+    border-color: transparent transparent #cacaca transparent;
+  }
 
   &__title {
     min-height: 84px;

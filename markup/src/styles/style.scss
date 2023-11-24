@@ -5,6 +5,8 @@
 $breakpoints: (
   xs-phone: 320px,
   apple: 375px,
+  apple-special: 378px,
+
   phone: 480px,
   samsung: 525px,
   tablet: 768px,
@@ -73,6 +75,7 @@ $media-expressions: (
 @import 'layout/17----media-partners';
 @import 'layout/18----latest-articles';
 @import 'layout/19----footer';
+@import 'layout/20----404-page';
 
 // 5. Components
 // @import 'components/button';

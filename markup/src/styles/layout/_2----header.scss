@@ -23,7 +23,7 @@
   align-items: center;
   gap: 14px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   li {
     opacity: 0;
@@ -47,6 +47,7 @@
     opacity: 0;
     transform: translate(-30px);
     transition: all 0.3s $animation-speed;
+    margin-right: auto;
 
     .loaded & {
       opacity: 1;

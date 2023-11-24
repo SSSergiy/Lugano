@@ -6,6 +6,7 @@
   }
 
   &__red-block {
+    transform: rotate(182deg);
     position: relative;
     z-index: 2;
     height: 33px;
@@ -22,6 +23,7 @@
     margin-right: 4%;
     position: relative;
     left: -80%;
+    transform: rotateX(182deg) scaleX(-1);
 
     @include media('≥tablet') {
       margin-right: 30%;
@@ -68,8 +70,10 @@
       top: 14px;
       right: 4px;
       font-size: 4px;
+      font-weight: normal !important;
 
       @include media('≥tablet') {
+        font-weight: normal !important;
         font-size: 7px;
         right: 10px;
         top: 34px;
@@ -91,6 +95,7 @@
       font-size: 9px;
       top: 5px;
       right: 16px;
+      font-style: normal;
 
       @include media('≥tablet') {
         top: 14px;
@@ -100,6 +105,7 @@
   }
 
   &__black-block {
+    transform: rotate(-2.8deg);
     position: relative;
     z-index: 2;
     height: 33px;
@@ -166,7 +172,10 @@
       font-size: 4px;
       color: #ffffff;
 
+      font-weight: normal !important;
+
       @include media('≥tablet') {
+        font-weight: normal !important;
         font-size: 7px;
         right: 10px;
         top: 34px;
@@ -187,6 +196,7 @@
       position: relative;
       top: 4px;
       text-transform: uppercase;
+      font-style: normal;
 
       @include media('≥tablet') {
         font-size: 30px;

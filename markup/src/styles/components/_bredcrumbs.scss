@@ -1,6 +1,11 @@
 .bredcrumbs-wrap {
   padding: 25px 0;
-  margin-bottom: 41px;
+  margin-bottom: 17px;
+
+  display: none;
+  @include media('≥tablet') {
+    display: block;
+  }
 }
 .bredcrumbs {
   margin: 0;
