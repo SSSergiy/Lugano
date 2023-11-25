@@ -1,205 +1,191 @@
 .ticker-tape {
-  margin-bottom: 46px;
+  margin-bottom: 104px;
 
-  @include media('≥widescreen') {
-    margin-bottom: 132px;
+  @include media('≥desktop') {
+    margin-bottom: 83px;
   }
-
-  &__red-block {
-    transform: rotate(182deg);
-    position: relative;
-    z-index: 2;
-    height: 33px;
-    background-color: #ff7701;
-
-    @include media('≥tablet') {
-      height: 124px;
-      padding-top: 31px;
-    }
-  }
-
-  &__red-item {
-    display: inline-block;
-    margin-right: 4%;
-    position: relative;
-    left: -80%;
-    transform: rotateX(182deg) scaleX(-1);
-
-    @include media('≥tablet') {
-      margin-right: 30%;
-    }
-  }
-
-  &__red-titlegroup {
-    position: relative;
-    display: inline-block;
-    margin-right: 16px;
-
-    strong {
-      width: 48px;
-      height: 19px;
-      background-color: #161616;
-      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
-      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 95% 65%, 0 65%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      @include media('≥tablet') {
-        width: 168px;
-        height: 52px;
-      }
-
-      span {
-        color: #ffffff;
-        padding-bottom: 8px;
-        font-weight: 900;
-        font-size: 9px;
-        font-family: $base-font-1;
-
-        @include media('≥tablet') {
-          padding-bottom: 17px;
-          font-size: 30px;
-          line-height: 27px;
+  .line-box {
+    &:first-child {
+      transform: rotate(2deg) scaleX(-1) scaleY(1) rotateX(2deg);
+      .mask {
+        p {
+          span {
+            &:first-child {
+              strong {
+                direction: rtl;
+                transform: scaleX(-1);
+              }
+              b {
+                transform: scaleX(-1);
+                direction: rtl;
+              }
+            }
+            &:nth-child(2) {
+              direction: rtl;
+              transform: scaleX(-1);
+              > em {
+                display: flex;
+                flex-direction: row-reverse;
+                flex-wrap: nowrap;
+                gap: 8px;
+              }
+            }
+          }
         }
       }
     }
-
-    b {
-      position: absolute;
-      top: 14px;
-      right: 4px;
-      font-size: 4px;
-      font-weight: normal !important;
-
-      @include media('≥tablet') {
-        font-weight: normal !important;
-        font-size: 7px;
-        right: 10px;
-        top: 34px;
-        font-size: 16px;
-      }
-    }
-  }
-
-  &__red-data {
-    display: inline-block;
-
-    em {
-      color: #161616;
-      font-family: $base-font-1;
-      font-weight: 900;
-      line-height: 120%;
-      position: relative;
-      text-transform: uppercase;
-      font-size: 9px;
-      top: 5px;
-      right: 16px;
-      font-style: normal;
-
-      @include media('≥tablet') {
-        top: 14px;
-        font-size: 30px;
-      }
-    }
-  }
-
-  &__black-block {
-    transform: rotate(-2.8deg);
-    position: relative;
-    z-index: 2;
-    height: 33px;
-    background-color: #000000;
-
-    @include media('≥tablet') {
-      top: 26px;
-      height: 124px;
-      padding-top: 31px;
-    }
-  }
-
-  &__black-item {
-    display: inline-block;
-    margin-right: 4%;
-    position: relative;
-    left: -80%;
-
-    @include media('≥tablet') {
-      margin-right: 30%;
-    }
-  }
-
-  &__black-titlegroup {
-    position: relative;
-    display: inline-block;
-    margin-right: 16px;
-    strong {
-      width: 48px;
-      height: 19px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-
-      background-color: #ff7701;
-      -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 79% 65%, 0 65%);
-      clip-path: polygon(0% 0%, 100% 0, 100% 100%, 95% 65%, 0 65%);
-
-      @include media('≥tablet') {
-        width: 168px;
-        height: 52px;
-      }
-
-      span {
-        color: #ffffff;
-        padding-bottom: 8px;
-        font-weight: 900;
-        font-size: 9px;
-        font-family: $base-font-1;
-
-        @include media('≥tablet') {
-          padding-bottom: 17px;
-          font-size: 30px;
-          line-height: 27px;
+    &:nth-child(2) {
+      transform: rotate(-2deg);
+      > .mask {
+        > .line {
+          background: black !important;
+          p {
+            color: #ffffff;
+            strong {
+              background-color: #ff7701 !important;
+              &:after {
+                border-color: #ff7701 transparent transparent transparent !important;
+              }
+            }
+          }
         }
       }
     }
+  }
+  .line-box {
+    margin: 0 auto;
+    width: 1488px;
+  }
 
-    b {
-      position: absolute;
-      top: 14px;
-      right: 4px;
-      font-size: 4px;
-      color: #ffffff;
-
-      font-weight: normal !important;
-
+  .line-box .mask {
+    overflow: hidden;
+    &:first-child {
+      margin-bottom: -35px;
       @include media('≥tablet') {
-        font-weight: normal !important;
-        font-size: 7px;
-        right: 10px;
-        top: 34px;
-        font-size: 16px;
+        margin-bottom: 29px;
+      }
+      .line {
+        background-color: #ff7701;
+        p {
+          strong {
+            background-color: #161616;
+            &:after {
+              border-color: #161616 transparent transparent transparent;
+            }
+          }
+        }
       }
     }
   }
 
-  &__black-data {
-    display: inline-block;
-
-    em {
-      color: #ffffff;
-      font-family: $base-font-1;
-      font-weight: 800;
-      font-size: 9px;
-      line-height: 120%;
-      position: relative;
-      top: 4px;
-      text-transform: uppercase;
-      font-style: normal;
+  .line-box {
+    .line {
+      display: flex !important;
+      align-items: center;
+      width: 9999px;
+      gap: 40px;
+      padding-top: 8px;
+      padding-bottom: 8px;
 
       @include media('≥tablet') {
-        font-size: 30px;
+        gap: 40px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
+      @include media('≥desktop') {
+        gap: 27px;
+        padding-top: 33px;
+        padding-bottom: 33px;
+      }
+
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        > :first-child {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          gap: 1px;
+
+          strong {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-family: $base-font-1;
+            line-height: 12px;
+            width: 70px;
+            height: 12px;
+            font-size: 9px;
+
+            @include media('≥tablet') {
+              font-size: 20px;
+              width: 130px;
+              height: 29px;
+            }
+            @include media('≥desktop') {
+              font-size: 30px;
+              width: 168px;
+              height: 37px;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 100%;
+              border-style: solid;
+              transform: rotate(0deg);
+              border-width: 5px 0px 0 5px;
+            }
+          }
+
+          b {
+            font-size: 5px;
+
+            @include media('≥tablet') {
+              font-size: 12px;
+            }
+
+            @include media('≥desktop') {
+              font-size: 16px;
+            }
+          }
+        }
+
+        > :nth-child(2) {
+          @include media('≥tablet') {
+            min-width: 190px;
+          }
+          @include media('≥desktop') {
+            min-width: 245px;
+          }
+
+          em {
+            font-family: $base-font-1;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            text-transform: uppercase;
+            font-size: 10px;
+
+            @include media('≥tablet') {
+              font-size: 20px;
+            }
+            @include media('≥desktop') {
+              font-size: 30px;
+            }
+          }
+        }
       }
     }
   }

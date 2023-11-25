@@ -104,15 +104,16 @@ li {
       content: '';
       position: absolute;
       top: 8px;
-      @include media('≥tablet') {
-        top: 50%;
-      }
       left: -14px;
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 9px 9px 0;
       border-color: transparent #161616;
+
+      @include media('≥tablet') {
+        top: 10px;
+      }
     }
   }
 }

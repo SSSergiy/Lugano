@@ -1,7 +1,7 @@
 .organizers {
   .container {
     padding-top: 13px;
-    margin-bottom: 35px;
+    margin-bottom: 51px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -15,8 +15,15 @@
     justify-items: center;
     gap: 16px;
 
+    @include media('≥phone') {
+      margin-bottom: 85px;
+    }
+    @include media('≥tablet') {
+      margin-bottom: 85px;
+    }
+
     @include media('≥desktop') {
-      margin-bottom: 33px;
+      margin-bottom: 38px;
 
       grid-template-columns: 40% 25% 25%;
       grid-template-rows: 96px 79px 207px;
